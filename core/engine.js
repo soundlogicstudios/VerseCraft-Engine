@@ -1,4 +1,4 @@
-// VerseCraft Engine – Phase 2 : State + Loop Validation
+// VerseCraft Engine – Phase 2 : State + Loop Validation (patched)
 export class VerseCraftEngine {
   constructor() {
     this.version = "v1.1.0-state-loop";
@@ -23,7 +23,7 @@ export class VerseCraftEngine {
     const now = performance.now();
     const delta = now - this.state.lastUpdate;
 
-    // Do work roughly once per second
+    // Run roughly once per second
     if (delta >= 1000) {
       this.state.tickCount++;
       this.state.lastUpdate = now;
