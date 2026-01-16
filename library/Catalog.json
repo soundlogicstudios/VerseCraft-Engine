@@ -5,14 +5,17 @@
       "pack_id": "starter",
       "title": "Starter Pack",
       "path": "./content/packs/starter/Pack.json"
-    }
+    },
     {
-       "packId": "echoes_beneath_the_lantern",
-       "title": "Echoes Beneath the Lantern",
-       "subtitle": "A Short VerseCraft Demonstration",
-       "author": "Sound Logic Studios",
-       "blurb": "In a silent village where no one dreams, a single lantern hums under the moonlight. What happens when you light it again?",
-       "assets": {
-       "cover": "content/packs/demo/covers/lantern.png"
+      "packId": "echoes_beneath_the_lantern",
+      "title": "Echoes Beneath the Lantern",
+      "subtitle": "A Short VerseCraft Demonstration",
+      "author": "Sound Logic Studios",
+      "blurb": "In a silent village where no one dreams, a single lantern hums under the moonlight. What happens when you light it again?",
+      "assets": {
+        "cover": "content/packs/demo/covers/lantern.png"
+      },
+      "path": "./Library/echoes_beneath_the_lantern.json"
     }
+  ]
 }
