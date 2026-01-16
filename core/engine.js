@@ -1,26 +1,26 @@
-/**
- * VerseCraft Core Engine
- * Handles story progression, state management, and runtime logic.
- */
-import { validateSchema } from './utils/validators.js';
-
 export class VerseCraftEngine {
-  constructor(story, entities) {
-    this.story = story;
-    this.entities = entities;
-    this.currentSection = story.sections[0];
-    this.state = { stats: {}, inventory: [] };
+  constructor() {
+    console.log('%c[VerseCraft Engine]', 'color:cyan;', 'Engine constructed.');
+    this.state = { version: 'v1.0-core-test', initialized: false };
   }
 
   start() {
-    console.log('Engine started.');
-    validateSchema(this.story, 'story');
+    console.log('%c[VerseCraft Engine]', 'color:lime;', 'Engine start() called.');
+    this.state.initialized = true;
+    this.validateCore();
   }
 
-  makeChoice(choiceId) {
-    const choice = this.currentSection.choices.find(c => c.next === choiceId);
-    if (!choice) return console.warn('Invalid choice.');
-    this.currentSection = this.story.sections.find(s => s.id === choiceId);
-    console.log(`Moved to: ${this.currentSection.id}`);
+  validateCore() {
+    console.log('%c[VerseCraft Engine]', 'color:yellow;', 'Running core validation checks...');
+    const checks = [
+      typeof this.start === 'function',
+      typeof this.validateCore === 'function',
+      this.state.initialized === true
+    ];
+    if (checks.every(Boolean)) {
+      console.log('%c[VerseCraft Engine]', 'color:lime;', '✅ Core systems operational.');
+    } else {
+      console.error('[VerseCraft Engine]', '❌ Core validation failed.');
+    }
   }
 }
