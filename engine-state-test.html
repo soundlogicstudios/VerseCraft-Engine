@@ -1,41 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerseCraft Engine Test</title>
-  <style>
-    body { background:#111; color:#eee; font-family:system-ui; text-align:center; }
-    button { margin:0.5rem; padding:10px 18px; background:#333; color:#eee; border:none; border-radius:6px; }
-    #output { height:40vh; overflow:auto; background:#000; color:#0f0; padding:8px; margin:1rem; font-family:monospace; text-align:left; }
-  </style>
-</head>
-<body>
-  <h1>VerseCraft Engine Test</h1>
-  <div>
-    <button id="startBtn">Start</button>
-    <button id="stopBtn">Stop</button>
-    <button id="resetBtn">Reset</button>
-  </div>
-  <div id="output"></div>
+<script type="module">
+  import { VerseCraftEngine } from './core/engine.js';
 
-  <script type="module">
-    import { VerseCraftEngine } from './core/engine.js';
+  const output = document.getElementById('output');
 
-    const engine = new VerseCraftEngine();
-    const output = document.getElementById('output');
+  function log(msg) {
+    output.innerHTML += msg + '<br>';
+    output.scrollTop = output.scrollHeight;
+    console.log(msg);
+  }
 
-    function log(msg) {
-      output.innerHTML += msg + '<br>';
-      output.scrollTop = output.scrollHeight;
-      console.log(msg);
-    }
+  // Pass the log function into the engine
+  const engine = new VerseCraftEngine(log);
+  log(`🧠 Engine ${engine.version} loaded`);
 
-    log(`🧠 Engine ${engine.version} loaded`);
-
-    document.getElementById('startBtn').onclick = () => { engine.start(); log("▶️ Start"); };
-    document.getElementById('stopBtn').onclick  = () => { engine.stop(); log("⏹ Stop"); };
-    document.getElementById('resetBtn').onclick = () => { engine.reset(); log("🔄 Reset"); };
-  </script>
-</body>
-</html>
+  document.getElementById('startBtn').onclick = () => { engine.start(); log("▶️ Start pressed"); };
+  document.getElementById('stopBtn').onclick  = () => { engine.stop(); log("⏹ Stop pressed"); };
+  document.getElementById('resetBtn').onclick = () => { engine.reset(); log("🔄 Reset pressed"); };
+</script>
