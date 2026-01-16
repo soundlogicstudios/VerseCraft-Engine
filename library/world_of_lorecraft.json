@@ -5,7 +5,7 @@
   },
   "start": "S01",
   "packId": "world_of_lorecraft",
-  "blurb": "A first run into a ruin that watches you back. Learn VerseCraft\u2019s rules through choices, consequences, and loot\u2014survive long enough to discover what the world remembers.",
+  "blurb": "A first run into a ruin that watches you back. Learn VerseCraft’s rules through choices, consequences, and loot—survive long enough to discover what the world remembers.",
   "assets": {
     "cover": "content/packs/starter/covers/world-of-lorecraft.png"
   },
@@ -31,7 +31,7 @@
           "to": "S07"
         },
         {
-          "label": "Move slowly\u2014watch the floor for traps",
+          "label": "Move slowly—watch the floor for traps",
           "to": "S05"
         }
       ]
@@ -83,7 +83,7 @@
           "to": "S05"
         },
         {
-          "label": "Leave it\u2014move quietly back toward the entrance",
+          "label": "Leave it—move quietly back toward the entrance",
           "to": "S01"
         }
       ]
@@ -135,7 +135,7 @@
           "to": "S14"
         },
         {
-          "label": "Strike while it\u2019s searching",
+          "label": "Strike while it’s searching",
           "to": "S11"
         }
       ]
@@ -252,7 +252,7 @@
           "to": "S23"
         },
         {
-          "label": "Don\u2019t linger\u2014leave before something bigger arrives",
+          "label": "Don’t linger—leave before something bigger arrives",
           "to": "S20"
         }
       ]
@@ -265,7 +265,7 @@
           "to": "S09"
         },
         {
-          "label": "Follow the hall\u2019s far passage into darkness",
+          "label": "Follow the hall’s far passage into darkness",
           "to": "S24"
         }
       ]
@@ -274,7 +274,7 @@
       "text": "S21 narrative text placeholder.",
       "options": [
         {
-          "label": "Proceed to the hall\u2019s far passage",
+          "label": "Proceed to the hall’s far passage",
           "to": "S24"
         }
       ]
