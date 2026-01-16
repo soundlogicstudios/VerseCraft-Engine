@@ -2,78 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>VerseCraft Engine Library Test</title>
+  <title>versecraft engine library test</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #111;
-      color: #eee;
-      font-family: system-ui, sans-serif;
-      text-align: center;
-    }
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-    }
-    button {
-      margin: 0.5rem;
-      padding: 10px 18px;
-      background: #333;
-      color: #eee;
-      border: none;
-      border-radius: 6px;
-    }
-    #output {
-      flex: 1;
-      width: 90%;
-      max-width: 600px;
-      overflow-y: auto;
-      background: #000;
-      color: #0f0;
-      padding: 8px;
-      margin: 1rem 0;
-      font-family: monospace;
-      text-align: left;
-      border-radius: 6px;
-    }
-    footer {
-      font-size: 0.8rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
+    body { background: black; color: white; font-family: monospace; text-align: center; }
+    .story-text { color: lime; white-space: pre-wrap; margin: 20px auto; max-width: 600px; }
+    button { margin: 5px; padding: 8px 12px; background: #333; color: white; border: 1px solid #555; cursor: pointer; }
   </style>
 </head>
 <body>
-  <main>
-    <h1>VerseCraft Engine Library Test</h1>
-    <div><button id="resetBtn">Reset</button></div>
-    <div id="output"></div>
-    <footer>VerseCraft engine v1.1.7-event-driven</footer>
-  </main>
+  <h1>versecraft engine library test</h1>
+  <div id="output"></div>
+  <button onclick="resetEngine()">reset</button>
 
   <script type="module">
     import { VerseCraftEngine } from './core/engine.js';
+    window.engine = new VerseCraftEngine(document.getElementById('output'));
+    window.engine.init('echoes_beneath_the_lantern');
 
-    const output = document.getElementById('output');
-
-    function log(msg) {
-      output.innerHTML += msg + '<br>';
-      output.scrollTop = output.scrollHeight;
-      console.log(msg);
-    }
-
-    const engine = new VerseCraftEngine(log);
-    engine.loadStory();
-
-    document.getElementById('resetBtn').onclick = () => {
-      output.innerHTML = '';
-      engine.reset();
-      engine.loadStory();
+    window.resetEngine = () => {
+      document.getElementById('output').innerHTML = '';
+      window.engine = new VerseCraftEngine(document.getElementById('output'));
+      window.engine.init('echoes_beneath_the_lantern');
     };
   </script>
 </body>
