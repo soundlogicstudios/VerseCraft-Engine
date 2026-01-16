@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerseCraft Story Selector</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    select, button {
+      margin: 0.5rem;
+      padding: 10px 16px;
+      background: #222;
+      color: #eee;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button:hover, select:hover {
+      background: #333;
+      cursor: pointer;
+    }
+    #output {
+      height: 50vh;
+      overflow-y: auto;
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      text-align: left;
+      padding: 8px;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>VerseCraft Engine Test</h1>
+
+  <!-- 🔽 Story Selector -->
+  <div>
+    <label for="storySelect">Choose a Story:</label>
+    <select id="storySelect">
+      <option value="world_of_lorecraft">World of Lorecraft</option>
+      <option value="echoes_beneath_the_lantern">Echoes Beneath the Lantern</option>
+    </select>
+    <button id="loadBtn">Load Story</button>
+  </div>
+
+  <!-- 🧠 Controls -->
+  <div>
+    <button id="startBtn">Start</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <!-- 🖥️ Output -->
+  <div id="output"></div>
+  <footer>VerseCraft Engine v1.1.2-story-select</footer>
+
+  <!-- 🧩 Scripts -->
+  <script type="module">
+    import { VerseCraftEngine } from './core/engine.js';
+    import { storyloader } from './library/storyloader.js';
+    import { StoryAdapter } from './library/storyadapter.js';
+
+    let engine = null;
+    let storyAdapter = null;
+    const output = document.getElementById('output');
+
+    function log(msg) {
+      output.innerHTML += msg + '<br>';
+      output.scrollTop = output.scrollHeight;
+      console.log(msg);
+    }
+
+    async function loadSelectedStory() {
+      const storyId = document.getElementById('storySelect').value;
+      output.innerHTML = "";
+      log(`📚 Loading story: ${storyId}...`);
+
+      const storyData = await storyloader.load(storyId);
+      if (!storyData) {
+        log(`❌ Failed to load story: ${storyId}`);
+        return;
+      }
+
+      engine = new VerseCraftEngine();
+      storyAdapter = new StoryAdapter(engine, storyData);
+      engine.adapter = storyAdapter;
+
+      log(`✅ Loaded: ${storyData.meta?.title || storyId}`);
+      engine.displaySection();
+    }
+
+    // Wire up buttons
+    document.getElementById('loadBtn').onclick = loadSelectedStory;
+    document.getElementById('startBtn').onclick = () => {
+      if (engine) {
+        log("▶️ Engine started");
+        engine.start();
+      } else {
+        log("⚠️ Load a story first!");
+      }
+    };
+    document.getElementById('resetBtn').onclick = () => {
+      if (storyAdapter) {
+        storyAdapter.reset();
+        engine.displaySection();
+        log("🔄 Story reset");
+      }
+    };
+  </script>
+</body>
+</html>
