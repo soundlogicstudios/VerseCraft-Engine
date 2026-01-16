@@ -2,27 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>versecraft engine library test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerseCraft Engine Test</title>
   <style>
-    body { background: black; color: white; font-family: monospace; text-align: center; }
-    .story-text { color: lime; white-space: pre-wrap; margin: 20px auto; max-width: 600px; }
-    button { margin: 5px; padding: 8px 12px; background: #333; color: white; border: 1px solid #555; cursor: pointer; }
+    :root {
+      --bg: #000;
+      --text: #eee;
+      --accent: #0f0;
+      --button-bg: #222;
+      --button-border: #444;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: monospace, system-ui;
+      font-size: 1.1rem;
+      overflow-x: hidden;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      min-height: 100vh;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    select, button {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--button-bg);
+      color: var(--text);
+      border: 1px solid var(--button-border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover, select:hover {
+      background: #333;
+    }
+
+    #output {
+      width: 90%;
+      max-width: 900px;
+      background: #111;
+      color: var(--accent);
+      border-radius: 8px;
+      padding: 1rem;
+      box-sizing: border-box;
+      text-align: left;
+      overflow-y: auto;
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 0.4rem 0;
+      background: var(--button-bg);
+      color: var(--text);
+      border: 1px solid var(--button-border);
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+
+    .choices button:hover {
+      background: #333;
+    }
+
+    footer {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      html, body {
+        font-size: 1rem;
+      }
+      #output {
+        width: 95%;
+        padding: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>versecraft engine library test</h1>
-  <div id="output"></div>
-  <button onclick="resetEngine()">reset</button>
+  <main>
+    <h1>VerseCraft Story Selector</h1>
+    <div id="controls">
+      <select id="storySelect">
+        <option value="world_of_lorecraft">World of Lorecraft</option>
+        <option value="echoes_beneath_the_lantern" selected>Echoes Beneath the Lantern</option>
+      </select>
+      <button id="loadBtn">Load Story</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div id="output"></div>
+    <footer>VerseCraft Engine v1.1.0 (Lowercase Canonical)</footer>
+  </main>
 
   <script type="module">
     import { VerseCraftEngine } from './core/engine.js';
-    window.engine = new VerseCraftEngine(document.getElementById('output'));
-    window.engine.init('echoes_beneath_the_lantern');
 
-    window.resetEngine = () => {
-      document.getElementById('output').innerHTML = '';
-      window.engine = new VerseCraftEngine(document.getElementById('output'));
-      window.engine.init('echoes_beneath_the_lantern');
+    const output = document.getElementById('output');
+    const storySelect = document.getElementById('storySelect');
+    const loadBtn = document.getElementById('loadBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    window.engine = new VerseCraftEngine(output);
+    window.engine.init(storySelect.value);
+
+    loadBtn.onclick = () => {
+      output.innerHTML = '';
+      window.engine = new VerseCraftEngine(output);
+      window.engine.init(storySelect.value);
+    };
+
+    resetBtn.onclick = () => {
+      output.innerHTML = '';
+      window.engine = new VerseCraftEngine(output);
+      window.engine.init(storySelect.value);
     };
   </script>
 </body>
