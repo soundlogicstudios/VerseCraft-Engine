@@ -1,26 +1,21 @@
-// storyloader.js – handles fetching JSON story data from /library/
+// storyloader.js – dynamically loads any story JSON from the /library folder
 
 export const storyloader = {
-  /**
-   * Load a specific story by ID (e.g., "world_of_lorecraft" or "echoes_beneath_the_lantern")
-   * Falls back to world_of_lorecraft.json if no ID is provided.
-   */
   async load(storyId = "world_of_lorecraft") {
-    const path = `./library/${storyId}.json`;
     try {
+      // build the correct path dynamically
+      const path = `./library/${storyId}.json`;
+      console.log(`[storyloader] fetching: ${path}`);
+
       const response = await fetch(path);
-      if (!response.ok) throw new Error(`Failed to fetch story JSON: ${path}`);
-      const storyData = await response.json();
-      console.log(`✅ Loaded story: ${storyData.meta?.title || storyId}`);
-      return storyData;
+      if (!response.ok) throw new Error(`Failed to fetch story JSON at ${path}`);
+
+      const data = await response.json();
+      console.log(`[storyloader] loaded: ${data.meta?.title || storyId}`);
+      return data;
     } catch (err) {
-      console.error("❌ StoryLoader error:", err);
+      console.error("[storyloader] error:", err);
       return null;
     }
-  },
-
-  // Legacy alias (for compatibility)
-  async loadDefault() {
-    return await this.load("world_of_lorecraft");
   }
 };
