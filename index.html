@@ -1,48 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VerseCraft Demo</title>
-  <link rel="stylesheet" href="./ui/themes/default.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerseCraft Engine Test</title>
 </head>
-<body>
-  <div id="app"></div>
-  <script type="module" src="./core/engine.js"></script>
+<body style="background:#0f0f0f; color:#fff; font-family:sans-serif; text-align:center;">
+  <h2>VerseCraft Engine Core Test</h2>
+  <div id="output">Initializing...</div>
+
   <script type="module">
-import { VerseCraftEngine } from './core/engine.js';
-import story from './core/schema/story.json' assert { type: 'json' };
-import entities from './core/schema/entities.json' assert { type: 'json' };
+    import { VerseCraftEngine } from './core/engine.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-  const engine = new VerseCraftEngine(story, entities);
-  engine.start();
+    const output = document.getElementById('output');
+    output.textContent = "Booting VerseCraft Engine...";
 
-  const storyEl = document.getElementById('storyText');
-  const choicesEl = document.getElementById('choices');
-
-  storyEl.textContent = engine.currentSection.text;
-
-  engine.currentSection.choices.forEach(choice => {
-    const btn = document.createElement('button');
-    btn.textContent = choice.text;
-    btn.onclick = () => {
-      engine.makeChoice(choice.next);
-      storyEl.textContent = engine.currentSection.text;
-      choicesEl.innerHTML = '';
-      engine.currentSection.choices.forEach(nextChoice => {
-        const nextBtn = document.createElement('button');
-        nextBtn.textContent = nextChoice.text;
-        nextBtn.onclick = () => {
-          engine.makeChoice(nextChoice.next);
-          storyEl.textContent = engine.currentSection.text;
-        };
-        choicesEl.appendChild(nextBtn);
-      });
-    };
-    choicesEl.appendChild(btn);
-  });
-});
-</script>
+    try {
+      const engine = new VerseCraftEngine();
+      if (engine && typeof engine.start === 'function') {
+        engine.start();
+        output.textContent = "✅ VerseCraft Engine initialized successfully.";
+      } else {
+        output.textContent = "⚠️ Engine instance created, but missing start() method.";
+      }
+    } catch (err) {
+      console.error(err);
+      output.textContent = "❌ Engine failed to initialize. See console for details.";
+    }
+  </script>
 </body>
 </html>
