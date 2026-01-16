@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Story Title Here",
+    "subtitle": "Optional Subtitle Here",
+    "author": "Author or Studio Name",
+    "version": "1.1.0-canon",
+    "checkpoint": "S01\u2013SXX",
+    "packId": "your_pack_id_here",
+    "buildTimestamp": "2026-01-16T17:53:53.897691Z"
+  },
+  "assets": {
+    "cover": "content/packs/yourpack/covers/cover-image.png",
+    "background": "content/packs/yourpack/backgrounds/background-image.png",
+    "music": "content/packs/yourpack/audio/theme.mp3"
+  },
+  "blurb": "A one-paragraph teaser or logline that appears in the story library before the player launches it.",
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "Your full prose narrative goes here. Use \\n\\n for paragraph breaks.",
+      "options": [
+        {
+          "label": "Option 1 text",
+          "next": "S02"
+        },
+        {
+          "label": "Option 2 text",
+          "next": "S03"
+        }
+      ],
+      "checkpoint": "S01"
+    },
+    "S02": {
+      "text": "Full prose for section 2.",
+      "options": [
+        {
+          "label": "Continue onward",
+          "next": "S03"
+        },
+        {
+          "label": "Return to previous path",
+          "next": "S01"
+        }
+      ],
+      "checkpoint": "S02"
+    },
+    "GOOD_END": {
+      "text": "Describe the positive or victorious ending in full prose.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "BAD_END": {
+      "text": "Describe the defeat, failure, or fatal ending here.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "SPECIAL_END": {
+      "text": "Describe a hidden or lore-driven ending (e.g., secret discovery, alternate reality).",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "NEUTRAL_END": {
+      "text": "Describe a bittersweet or morally gray resolution here.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "LOOP_END": {
+      "text": "Describe a cyclical ending that restarts the story. Could represent a time loop, curse, or repeating fate.",
+      "options": [
+        {
+          "label": "Awaken again at the beginning",
+          "next": "S01"
+        }
+      ]
+    }
+  }
+}
