@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Echoes Beneath the Lantern",
+    "subtitle": "A Short VerseCraft Demonstration",
+    "author": "Sound Logic Studios",
+    "version": "1.1.0-canon",
+    "checkpoint": "S01\u2013S04",
+    "packId": "echoes_beneath_the_lantern",
+    "buildTimestamp": "2026-01-16T18:00:52.645140Z"
+  },
+  "assets": {
+    "cover": "content/packs/demo/covers/lantern.png",
+    "background": "content/packs/demo/backgrounds/tunnel.png",
+    "music": "content/packs/demo/audio/echo_theme.mp3"
+  },
+  "blurb": "In a silent village where no one dreams, a single lantern hums under the moonlight. What happens when you light it again?",
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The village of Hallowmere sleeps without dreams. A single lantern sways above the well, its glass blackened by soot.\n\nYour hand trembles as you lift the flint. The elders said never to wake the flame again.",
+      "options": [
+        {
+          "label": "Strike the flint",
+          "next": "S02"
+        },
+        {
+          "label": "Walk away into the fog",
+          "next": "S03"
+        }
+      ],
+      "checkpoint": "S01"
+    },
+    "S02": {
+      "text": "Sparks catch, and the lantern ignites.\n\nFor the first time in years, light spills across the square. Shadows recoil. The well exhales a breath older than memory.\n\nSomething in the dark whispers your name.",
+      "options": [
+        {
+          "label": "Answer the whisper",
+          "next": "S04"
+        },
+        {
+          "label": "Snuff the lantern immediately",
+          "next": "BAD_END"
+        }
+      ],
+      "checkpoint": "S02"
+    },
+    "S03": {
+      "text": "You turn from the well. The fog parts to reveal the empty road leading out of Hallowmere.\n\nNo one will ever know what waited beneath the village. But perhaps that\u2019s mercy.",
+      "options": [
+        {
+          "label": "Keep walking",
+          "next": "NEUTRAL_END"
+        }
+      ]
+    },
+    "S04": {
+      "text": "You whisper back\u2014and the lantern flares.\n\nBeneath the well, water becomes glass, and a figure rises from within\u2014your reflection, smiling where you cannot.\n\nIt offers you its hand.",
+      "options": [
+        {
+          "label": "Take its hand",
+          "next": "GOOD_END"
+        },
+        {
+          "label": "Refuse and run",
+          "next": "BAD_END"
+        }
+      ],
+      "checkpoint": "S04"
+    },
+    "GOOD_END": {
+      "text": "You touch its hand\u2014and warmth floods through you. The reflection dissolves into light, seeping beneath your skin.\n\nThe lantern burns clean now, and the village breathes again.\n\nSome echoes just wanted to be heard.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "BAD_END": {
+      "text": "You turn away, and the lantern goes cold.\n\nThe whisper becomes a sigh, and the well closes over with frost.\n\nIn the dark that follows, something else opens its eyes.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    },
+    "NEUTRAL_END": {
+      "text": "The fog swallows you. Behind, the lantern flickers once\u2014and goes out.\n\nSome mysteries survive because we let them.",
+      "options": [
+        {
+          "label": "Return to Main Menu",
+          "next": null
+        }
+      ]
+    }
+  }
+}
