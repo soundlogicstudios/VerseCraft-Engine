@@ -81,30 +81,53 @@
       console.log(msg);
     }
 
-    // Initialize engine and adapter
+    // Initialize engine and story adapter
     const engine = new VerseCraftEngine(log);
     let adapter = null;
+    let storyData = null;
 
     async function loadStory() {
       log('📖 Loading story data...');
       try {
         const response = await fetch('./library/world_of_lorecraft.json');
-        const storyData = await response.json();
-        adapter = new StoryAdapter(engine, storyData);
-        log(`✅ Loaded story: ${storyData.meta?.title || 'Unknown Title'}`);
-        displayScene();
+        storyData = await response.json();
+
+        // Normalize structure for backward compatibility
+        const normalizedStory = {
+          meta: storyData.meta || { title: storyData.story?.title || 'Untitled' },
+          start: storyData.start || storyData.story?.start || 'S01',
+          scenes: storyData.scenes || storyData.sections || storyData.story?.sections || {}
+        };
+
+        adapter = new StoryAdapter(engine, normalizedStory);
+        log(`✅ Loaded story: ${normalizedStory.meta?.title || 'Unknown Title'}`);
+        displayScene(normalizedStory);
       } catch (err) {
         log('❌ Failed to load story: ' + err.message);
       }
     }
 
-    function displayScene() {
-      if (!adapter) return;
-      const section = adapter.getCurrentSection();
+    function displayScene(story) {
+      if (!story) {
+        log('⚠️ No story data found.');
+        return;
+      }
+
+      // Support both "scenes" and "sections"
+      const scenes = story.scenes || story.sections;
+      if (!scenes) {
+        log('⚠️ No scene data found.');
+        return;
+      }
+
+      const startKey = story.start || Object.keys(scenes)[0];
+      const section = scenes[startKey];
+
       if (!section) {
         log('⚠️ No scene data found.');
         return;
       }
+
       log(`<strong>${section.text}</strong>`);
       if (section.options) {
         section.options.forEach((opt, i) => {
@@ -118,12 +141,22 @@
       log('▶️ Start pressed');
       await loadStory();
       engine.start();
+      log('🟢 Engine started');
     };
 
-    document.getElementById('stopBtn').onclick = () => { log('⏹ Stop pressed'); engine.stop(); };
-    document.getElementById('resetBtn').onclick = () => { log('🔄 Reset pressed'); engine.reset(); };
+    document.getElementById('stopBtn').onclick = () => {
+      log('⏹ Stop pressed');
+      engine.stop();
+      log('🔴 Engine stopped');
+    };
 
-    // Prevent accidental scroll bounce (iOS)
+    document.getElementById('resetBtn').onclick = () => {
+      log('🔄 Reset pressed');
+      engine.reset();
+      log('🟡 Engine reset');
+    };
+
+    // Prevent accidental scroll bounce (especially iOS)
     window.addEventListener('touchmove', e => {
       if (!e.target.closest('#output')) e.preventDefault();
     }, { passive: false });
