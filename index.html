@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerseCraft Engine Test</title>
+  <title>VerseCraft Main</title>
+  <style>
+    body { background:#000; color:#fff; text-align:center; font-family:system-ui; margin-top:3rem; }
+    a { color:#0f0; text-decoration:none; font-size:1.5rem; }
+  </style>
 </head>
-<body style="background:#0f0f0f; color:#fff; font-family:sans-serif; text-align:center;">
-  <h2>VerseCraft Engine Core Test</h2>
-  <div id="output">Initializing...</div>
-
-  <script type="module">
-  import('./engine-state-test-v2.js')
-    .then(() => console.log('✅ VerseCraft main booted Phase-2 engine'))
-    .catch(err => console.error('❌ Failed to boot VerseCraft Engine:', err));
-</script>
+<body>
+  <h1>VerseCraft Platform</h1>
+  <p><a href="./engine-state-test.html">Launch Engine Test</a></p>
 </body>
 </html>
