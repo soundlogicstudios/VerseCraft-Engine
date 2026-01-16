@@ -1,34 +1,53 @@
-// VerseCraft Engine – v1.1.2-state-loop-visual
-export class VerseCraftEngine {
-  constructor(outputCallback) {
-    this.version = "v1.1.2-state-loop-visual";
-    this.tickCount = 0;
-    this.running = false;
-    this.output = outputCallback || console.log;
+// engine.js - event-driven versecraft engine
+import { storyadapter } from './storyadapter.js';
+import { storyloader } from './storyloader.js';
+
+export class versecraftengine {
+  constructor(log) {
+    this.log = log;
+    this.version = 'v1.1.4-event-driven';
+    this.story = null;
+    this.adapter = null;
   }
 
-  start() {
-    if (this.running) return;
-    this.running = true;
-    this.output("🟢 Engine started");
-    this.loop();
+  async loadStory(storyId) {
+    try {
+      this.log(`📖 Loading story: ${storyId}...`);
+      const storyData = await storyloader.loadStoryById(storyId);
+      this.story = storyData;
+      this.adapter = new storyadapter(this, storyData);
+      this.log(`✅ Loaded story: ${storyData.meta?.title || storyId}`);
+      this.renderScene();
+    } catch (err) {
+      this.log('❌ Failed to load story: ' + err.message);
+    }
   }
 
-  loop() {
-    if (!this.running) return;
-    this.tickCount++;
-    this.output(`Tick ${this.tickCount}`);
-    requestAnimationFrame(() => this.loop());
+  renderScene() {
+    if (!this.adapter || !this.story) return;
+    const scene = this.adapter.getCurrentSection();
+    if (!scene) {
+      this.log('⚠️ No scene data found.');
+      return;
+    }
+    this.log(`<strong>${scene.text}</strong>`);
+    if (scene.options) {
+      scene.options.forEach((opt, i) => {
+        this.log(`(${i + 1}) ${opt.label}`);
+      });
+    }
   }
 
-  stop() {
-    if (!this.running) return;
-    this.running = false;
-    this.output("🔴 Engine stopped");
+  choose(index) {
+    if (!this.adapter) return;
+    this.adapter.makeChoice(index);
+    this.renderScene();
   }
 
   reset() {
-    this.tickCount = 0;
-    this.output("♻️ Engine reset");
+    if (!this.adapter || !this.story) return;
+    this.log('🔄 Resetting story...');
+    this.adapter.current = this.story.start;
+    this.renderScene();
   }
 }
