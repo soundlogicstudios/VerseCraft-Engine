@@ -3,86 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerseCraft Engine :: Phase-2 Core Test</title>
+  <title>VerseCraft Engine Test</title>
   <style>
-    body {
-      margin: 0; padding: 0;
-      background: #0c0c0c; color: #f5f5f5;
-      font-family: system-ui, sans-serif; text-align: center;
-    }
-    h1 { margin-top: 2rem; font-weight: 600; }
-    #controls { margin-bottom: 1rem; }
-    #output {
-      background: rgba(0, 0, 0, 0.85);
-      color: #0f0;
-      font-family: monospace;
-      text-align: left;
-      padding: 8px;
-      height: 40vh;
-      overflow-y: auto;
-      border-top: 1px solid #333;
-    }
-    footer {
-      font-size: 0.8rem;
-      color: #aaa;
-      background: #111;
-      padding: 5px;
-      border-top: 1px solid #222;
-      position: fixed;
-      bottom: 0; left: 0; width: 100%;
-    }
-    button {
-      margin: 0.5rem; padding: 10px 18px;
-      border: none; border-radius: 5px;
-      background: #222; color: #eee;
-    }
+    body { background:#111; color:#eee; font-family:system-ui; text-align:center; }
+    button { margin:0.5rem; padding:10px 18px; background:#333; color:#eee; border:none; border-radius:6px; }
+    #output { height:40vh; overflow:auto; background:#000; color:#0f0; padding:8px; margin:1rem; font-family:monospace; text-align:left; }
   </style>
 </head>
 <body>
-  <h1>VerseCraft Engine :: Phase-2 Core Test</h1>
-  <div id="controls">
+  <h1>VerseCraft Engine Test</h1>
+  <div>
     <button id="startBtn">Start</button>
     <button id="stopBtn">Stop</button>
     <button id="resetBtn">Reset</button>
   </div>
   <div id="output"></div>
-  <footer id="footerVersion"></footer>
 
   <script type="module">
-    window.addEventListener('DOMContentLoaded', () => {
-      const output = document.getElementById('output');
-      const footer = document.getElementById('footerVersion');
+    import { VerseCraftEngine } from './core/engine.js';
 
-      // === Inline logger ===
-      function log(...a){
-        const m = a.join(' ');
-        output.innerHTML += m + '<br>';
-        output.scrollTop = output.scrollHeight;
-        console.log(...a);
-      }
-      function err(...a){
-        const m = a.join(' ');
-        output.innerHTML += `<span style="color:red">${m}</span><br>`;
-        output.scrollTop = output.scrollHeight;
-        console.error(...a);
-      }
+    const engine = new VerseCraftEngine();
+    const output = document.getElementById('output');
 
-      log("🧠 Inline Logger Active (Phase-2)");
+    function log(msg) {
+      output.innerHTML += msg + '<br>';
+      output.scrollTop = output.scrollHeight;
+      console.log(msg);
+    }
 
-      // === Engine import + wiring ===
-      import('./core/engine.js')
-        .then(({ VerseCraftEngine }) => {
-          log("Import success: VerseCraftEngine module loaded.");
+    log(`🧠 Engine ${engine.version} loaded`);
 
-          const engine = new VerseCraftEngine();
-          footer.textContent = `VerseCraft Engine ${engine.version}`;
-
-          document.getElementById('startBtn').onclick = () => { log("▶️ Start pressed"); engine.start(); };
-          document.getElementById('stopBtn').onclick  = () => { log("⏹ Stop pressed"); engine.stop(); };
-          document.getElementById('resetBtn').onclick = () => { log("🔄 Reset pressed"); engine.reset(); };
-        })
-        .catch(e => err("❌ Import failed:", e.message));
-    });
+    document.getElementById('startBtn').onclick = () => { engine.start(); log("▶️ Start"); };
+    document.getElementById('stopBtn').onclick  = () => { engine.stop(); log("⏹ Stop"); };
+    document.getElementById('resetBtn').onclick = () => { engine.reset(); log("🔄 Reset"); };
   </script>
 </body>
 </html>
