@@ -1,12 +1,12 @@
-
-// VerseCraft Engine v1.1.4-event-driven (fixed import logic)
+// versecraft engine v1.1.5-flex-choice
+// automatically detects and renders choices from various key names
 
 import { StoryAdapter } from './StoryAdapter.js';
 import { storyloader } from './storyloader.js';
 
 export class VerseCraftEngine {
   constructor(log) {
-    this.version = "v1.1.4-event-driven";
+    this.version = "v1.1.5-flex-choice";
     this.log = log;
     this.adapter = null;
   }
@@ -30,11 +30,25 @@ export class VerseCraftEngine {
   displaySection() {
     const section = this.adapter?.getCurrentSection();
     if (!section) return this.log("⚠️ no section available.");
+
+    // Display section text
     this.log(section.text);
-    if (section.choices) {
-      section.choices.forEach((choice, i) => {
-        this.log(`(${i + 1}) ${choice.text}`);
+
+    // Flexible choice key detection
+    const choiceSet =
+      section.choices ||
+      section.options ||
+      section.paths ||
+      section.selections ||
+      [];
+
+    if (Array.isArray(choiceSet) && choiceSet.length > 0) {
+      choiceSet.forEach((choice, i) => {
+        const label = choice.label || choice.text || `Option ${i + 1}`;
+        this.log(`(${i + 1}) ${label}`);
       });
+    } else {
+      this.log("⚠️ no choices available in this section.");
     }
   }
 
