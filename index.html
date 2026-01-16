@@ -10,23 +10,9 @@
   <div id="output">Initializing...</div>
 
   <script type="module">
-    import { VerseCraftEngine } from './engine-state-test-v2.html';
-
-    const output = document.getElementById('output');
-    output.textContent = "Booting VerseCraft Engine...";
-
-    try {
-      const engine = new VerseCraftEngine();
-      if (engine && typeof engine.start === 'function') {
-        engine.start();
-        output.textContent = "✅ VerseCraft Engine initialized successfully.";
-      } else {
-        output.textContent = "⚠️ Engine instance created, but missing start() method.";
-      }
-    } catch (err) {
-      console.error(err);
-      output.textContent = "❌ Engine failed to initialize. See console for details.";
-    }
-  </script>
+  import('./engine-state-test-v2.html')
+    .then(() => console.log('✅ VerseCraft main booted Phase-2 engine'))
+    .catch(err => console.error('❌ Failed to boot VerseCraft Engine:', err));
+</script>
 </body>
 </html>
