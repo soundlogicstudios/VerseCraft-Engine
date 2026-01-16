@@ -11,6 +11,7 @@
       font-family: system-ui, sans-serif; text-align: center;
     }
     h1 { margin-top: 2rem; font-weight: 600; }
+    #controls { margin-bottom: 1rem; }
     #output {
       background: rgba(0, 0, 0, 0.85);
       color: #0f0;
@@ -48,30 +49,40 @@
   <footer id="footerVersion"></footer>
 
   <script type="module">
-    // === Inline logger ===
-    const output = document.getElementById('output');
-    function log(...a){const m=a.join(' ');output.innerHTML+=m+'<br>';output.scrollTop=output.scrollHeight;console.log(...a);}
-    function err(...a){const m=a.join(' ');output.innerHTML+=`<span style='color:red'>${a.join(' ')}</span><br>`;output.scrollTop=output.scrollHeight;console.error(...a);}
-    log("🧠 Inline Logger Active (Phase-2)");
+    window.addEventListener('DOMContentLoaded', () => {
+      const output = document.getElementById('output');
+      const footer = document.getElementById('footerVersion');
 
-    // === Engine import + wiring ===
-    try {
+      // === Inline logger ===
+      function log(...a){
+        const m = a.join(' ');
+        output.innerHTML += m + '<br>';
+        output.scrollTop = output.scrollHeight;
+        console.log(...a);
+      }
+      function err(...a){
+        const m = a.join(' ');
+        output.innerHTML += `<span style="color:red">${m}</span><br>`;
+        output.scrollTop = output.scrollHeight;
+        console.error(...a);
+      }
+
+      log("🧠 Inline Logger Active (Phase-2)");
+
+      // === Engine import + wiring ===
       import('./core/engine.js')
         .then(({ VerseCraftEngine }) => {
           log("Import success: VerseCraftEngine module loaded.");
 
           const engine = new VerseCraftEngine();
-          document.getElementById('footerVersion').textContent =
-            `VerseCraft Engine ${engine.version}`;
+          footer.textContent = `VerseCraft Engine ${engine.version}`;
 
           document.getElementById('startBtn').onclick = () => { log("▶️ Start pressed"); engine.start(); };
           document.getElementById('stopBtn').onclick  = () => { log("⏹ Stop pressed"); engine.stop(); };
           document.getElementById('resetBtn').onclick = () => { log("🔄 Reset pressed"); engine.reset(); };
         })
         .catch(e => err("❌ Import failed:", e.message));
-    } catch (e) {
-      err("❌ Critical failure:", e.message);
-    }
+    });
   </script>
 </body>
 </html>
