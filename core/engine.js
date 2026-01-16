@@ -1,12 +1,12 @@
-// versecraft engine v1.1.6-interactive
-// adds interactive choice selection for story navigation
+// versecraft engine v1.1.7-schema-sync
+// fully compatible with world_of_lorecraft.json structure
 
 import { StoryAdapter } from './StoryAdapter.js';
 import { storyloader } from './storyloader.js';
 
 export class VerseCraftEngine {
   constructor(log) {
-    this.version = "v1.1.6-interactive";
+    this.version = "v1.1.7-schema-sync";
     this.log = log;
     this.adapter = null;
     this.output = document.getElementById('output');
@@ -32,11 +32,21 @@ export class VerseCraftEngine {
     const section = this.adapter?.getCurrentSection();
     if (!section) return this.log("⚠️ no section available.");
 
-    // clear output and show section text
+    // clear and print section text
     this.output.innerHTML = '';
     this.appendLine(section.text);
 
-    // find choices dynamically
+    // handle optional system info
+    if (section.system) {
+      const sysLine = document.createElement('div');
+      sysLine.innerHTML = `<i>${section.system}</i>`;
+      sysLine.style.color = "#888";
+      sysLine.style.fontSize = "0.9rem";
+      sysLine.style.margin = "0.5rem 0";
+      this.output.appendChild(sysLine);
+    }
+
+    // resolve compatible choice field
     const choiceSet =
       section.choices ||
       section.options ||
@@ -61,13 +71,21 @@ export class VerseCraftEngine {
   selectChoice(choice) {
     if (!choice || !this.adapter) return;
 
-    const nextId = choice.next;
+    // check schema-compatible key
+    const nextId = choice.to || choice.next || null;
+
+    if (choice.toMenu) {
+      this.appendLine("🏁 returning to main menu (placeholder)");
+      this.reset();
+      return;
+    }
+
     if (!nextId) {
       this.appendLine("🟡 this path ends here.");
       return;
     }
 
-    // move to next scene and redisplay
+    // move to the next section
     this.adapter.current = nextId;
     this.displaySection();
   }
