@@ -1,0 +1,14 @@
+{
+  "title": "Sample Story",
+  "author": "VerseCraft Dev",
+  "sections": [
+    {
+      "id": "section_001",
+      "text": "You awaken in a strange place. A voice whispers, 'Choose wisely.'",
+      "choices": [
+        {"text": "Explore the forest", "next": "section_002"},
+        {"text": "Wait for help", "next": "section_003"}
+      ]
+    }
+  ]
+}

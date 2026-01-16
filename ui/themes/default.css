@@ -1,0 +1,9 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #101010;
+  color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+.panel { padding: 20px; }
+button { background-color: #333; color: #fff; border: none; padding: 10px; }

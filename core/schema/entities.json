@@ -1,0 +1,8 @@
+{
+  "slots": [
+    {"id": "slot1", "label": "Health", "type": "integer", "max": 100},
+    {"id": "slot2", "label": "Wealth", "type": "integer", "max": 9999},
+    {"id": "slot3", "label": "Reputation", "type": "integer", "max": 100},
+    {"id": "slot4", "label": "Sanity", "type": "integer", "max": 100}
+  ]
+}
