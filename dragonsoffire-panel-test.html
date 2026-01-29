@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dragons of Fire Panel Test</title>
+  <link rel="stylesheet" href="./ui/themes/dragonsoffire_panel.css" />
+</head>
+<body>
+  <div id="debug">loading...</div>
+
+  <div class="panel-canvas" aria-label="story panel">
+    <div class="overlay">
+      <div id="narrativeText" role="region" aria-label="narrative"></div>
+
+      <button id="choice0" class="choice-pill" type="button"></button>
+      <button id="choice1" class="choice-pill" type="button"></button>
+      <button id="choice2" class="choice-pill" type="button"></button>
+      <button id="choice3" class="choice-pill" type="button"></button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { PanelEngine } from './core/panel_engine.js';
+
+    const params = new URLSearchParams(location.search);
+    const storyId = params.get('story') || 'echoes_beneath_the_lantern';
+
+    // Debug toggle: add ?debug=1
+    if (params.get('debug') === '1') document.body.classList.add('debug');
+
+    const engine = new PanelEngine({
+      storyTextEl: document.getElementById('narrativeText'),
+      choiceButtons: [
+        document.getElementById('choice0'),
+        document.getElementById('choice1'),
+        document.getElementById('choice2'),
+        document.getElementById('choice3'),
+      ],
+      debugEl: document.getElementById('debug'),
+    });
+
+    window.engine = engine; // convenience for console testing
+    engine.init(storyId);
+  </script>
+</body>
+</html>
