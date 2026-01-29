@@ -1,5 +1,5 @@
 {
-  "version": "0.0.05",
+  "version": "0.0.06",
   "slots": [
     {
       "storyId": "backrooms",
@@ -16,6 +16,10 @@
     {
       "storyId": "world_of_lorecraft",
       "title": "World of Lorecraft"
+    },
+    {
+      "storyId": "dragons_of_fire",
+      "title": "Dragons Of Fire"
     },
     {
       "storyId": "oregon_trail",
@@ -37,7 +41,5 @@
       "storyId": "echoes_beneath_the_lantern",
       "title": "Echoes Beneath the Lantern"
     }
-  ]
-}
   ]
 }

@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "title": "Dragons Of Fire",
+    "storyId": "dragons_of_fire",
+    "version": "0.0.01",
+    "author": "VerseCraft Sample",
+    "notes": "Sample story for panel harness testing. Original content; short pill labels; narrative explains choices."
+  },
+  "start": "S01",
+  "packId": "samples",
+  "blurb": "Natalia steps through a living ember-portal into a dragon realm of courtly flame and skyborne politics.",
+  "assets": {
+    "panel": "ui/panels/dragonsoffire-narrative-panel.webp"
+  },
+  "scenes": {
+    "S01": {
+      "text": "Natalia finds the first ember in an ordinary place: the corner of the backyard where the grass refuses to grow. It isn\u2019t a flame\u2014more like a floating coal that doesn\u2019t burn out, pulsing gently as if it\u2019s listening. When she leans closer, the ember splits into a ring, and the ring becomes a doorway made of slow-moving fire. Beyond it: a sky the color of dusk, islands of rock drifting like ships, and distant silhouettes circling on silent wings. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Touch the ember-ring with one finger, testing if it\u2019s safe?\n\u2022 Call for an adult, even if it feels like the moment might vanish?\n\u2022 Step through immediately, trusting curiosity over caution?",
+      "options": [
+        {
+          "label": "Touch",
+          "to": "S02"
+        },
+        {
+          "label": "Call For Help",
+          "to": "S03"
+        },
+        {
+          "label": "Step Through",
+          "to": "S04"
+        }
+      ]
+    },
+    "S02": {
+      "text": "The ember-ring is warm, not painful. When Natalia touches it, the heat curls around her finger like a ribbon and then\u2014unexpectedly\u2014bows. A voice vibrates through the air, not in words at first, but in meaning: *recognized.* The doorway widens as if making room for her choice rather than pushing her toward it. On the other side, a terrace of black glass overlooks a city of carved basalt spires, each lit from within by slow lava-lanterns. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Ask the voice who it is, and why it recognizes you?\n\u2022 Withdraw your hand and decide this is too strange?\n\u2022 Accept the invitation and step onto the terrace?",
+      "options": [
+        {
+          "label": "Ask Who",
+          "to": "S05"
+        },
+        {
+          "label": "Pull Back",
+          "to": "S03"
+        },
+        {
+          "label": "Enter",
+          "to": "S04"
+        }
+      ]
+    },
+    "S03": {
+      "text": "Natalia calls out\u2014half warning, half wonder\u2014but the ember-ring dims, reacting like a shy animal. Footsteps in the house, the everyday world rushing toward her, and the portal tightens as if it only stays open for those who choose quickly. She has seconds to decide whether she protects the ordinary\u2026 or protects the opportunity. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Rush through before anyone can stop you?\n\u2022 Stay put and let the portal close, memorizing every detail?\n\u2022 Grab something nearby (a scarf, a small flashlight) and then go?",
+      "options": [
+        {
+          "label": "Go Now",
+          "to": "S04"
+        },
+        {
+          "label": "Let It Close",
+          "to": "S06"
+        },
+        {
+          "label": "Grab Gear",
+          "to": "S07"
+        }
+      ]
+    },
+    "S04": {
+      "text": "Heat wraps around Natalia like a cloak, and the backyard falls away. She steps onto a terrace where the floor is smooth obsidian and her shadow looks sharper than it should. A dragon lands nearby\u2014massive, but careful\u2014folding wings with the manner of a court attendant. Its eyes are bright gold, and when it speaks, the words arrive in her mind like a formal letter: *Welcome, little ember. You are expected.* The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Introduce yourself politely, like you\u2019ve just arrived at an important dinner?\n\u2022 Demand to know where you are and how to get home?\n\u2022 Stay quiet and watch, learning the rules before you speak?",
+      "options": [
+        {
+          "label": "Be Polite",
+          "to": "S08"
+        },
+        {
+          "label": "Demand Answers",
+          "to": "S09"
+        },
+        {
+          "label": "Observe",
+          "to": "S10"
+        }
+      ]
+    },
+    "S05": {
+      "text": "The voice resolves into presence: an unseen dragon speaking from the air itself. *Names are gifts,* it says. *Earn one here, and you will wear it forever.* Natalia feels the weight of that\u2014like royalty isn\u2019t a crown, but a responsibility you agree to carry. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Offer your full name anyway, as an act of trust?\n\u2022 Ask what it means to 'earn' a name in this realm?\n\u2022 Refuse and step away from the portal?",
+      "options": [
+        {
+          "label": "Offer Name",
+          "to": "S08"
+        },
+        {
+          "label": "Ask Rules",
+          "to": "S10"
+        },
+        {
+          "label": "Refuse",
+          "to": "S06"
+        }
+      ]
+    },
+    "S06": {
+      "text": "Natalia watches the ember-ring contract into a single coal again, then vanish with a soft snap like a candle being pinched out. The yard is the yard. The air is just air. But her heart keeps beating like it\u2019s still hearing wings. Some opportunities don\u2019t disappear; they relocate. She senses\u2014without knowing how\u2014that the portal will return, and that next time it will be less gentle. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nEnd (for now).\n\nDo you:\n\u2022 Start writing down everything you saw so you\u2019ll be ready next time?\n\u2022 Search the yard for any trace the ember left behind?\n\u2022 Tell no one, keeping the secret close?",
+      "options": [
+        {
+          "label": "Write It Down",
+          "to": "S11"
+        },
+        {
+          "label": "Search",
+          "to": "S12"
+        },
+        {
+          "label": "Keep Secret",
+          "to": "S13"
+        }
+      ]
+    },
+    "S07": {
+      "text": "Natalia snatches a small flashlight and wraps a scarf around her wrist like a promise to return. The portal accepts the gesture\u2014practical, prepared\u2014and the heat feels steadier as she crosses. On the terrace, the dragon\u2019s gaze flicks to the flashlight with something like approval: *Tools are manners in the wild.* The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Ask if the flashlight is considered a weapon or a toy here?\n\u2022 Offer the scarf as a greeting gift?\n\u2022 Ask what 'expected' means?",
+      "options": [
+        {
+          "label": "Ask About Tool",
+          "to": "S10"
+        },
+        {
+          "label": "Offer Gift",
+          "to": "S08"
+        },
+        {
+          "label": "Ask Expected",
+          "to": "S09"
+        }
+      ]
+    },
+    "S08": {
+      "text": "Natalia chooses politeness, and the air seems to brighten in response. The dragon inclines its head\u2014an exact angle, practiced\u2014and steps aside to reveal a procession of smaller dragons in ceremonial harnesses of bronze. *You will be taught,* the dragon says. *Royalty is not born here. It is made\u2014by etiquette, by courage, and by choosing the good of the sky over the comfort of the ground.* The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Agree to learn, even if you don\u2019t fully understand?\n\u2022 Ask what happens if you fail their lessons?\n\u2022 Request proof you can go home whenever you want?",
+      "options": [
+        {
+          "label": "Agree",
+          "to": "S14"
+        },
+        {
+          "label": "Ask Consequence",
+          "to": "S15"
+        },
+        {
+          "label": "Ask Home",
+          "to": "S16"
+        }
+      ]
+    },
+    "S09": {
+      "text": "This is a sample continuation node S09. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S10": {
+      "text": "This is a sample continuation node S10. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S11": {
+      "text": "This is a sample continuation node S11. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S12": {
+      "text": "This is a sample continuation node S12. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S13": {
+      "text": "This is a sample continuation node S13. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S14": {
+      "text": "This is a sample continuation node S14. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S15": {
+      "text": "This is a sample continuation node S15. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S16"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    },
+    "S16": {
+      "text": "This is a sample continuation node S16. Natalia\u2019s world expands with each breath of warm wind, and the dragons speak in layered meaning\u2014part language, part emotion, part ancient law. Court life here is not marble halls; it is open air, strict rules, and the constant awareness that the sky is both stage and battlefield. The air tastes like warm copper and rain on stone, and every breath feels like the world is exhaling with you. Somewhere nearby, something vast shifts\u2014scales whispering against scales\u2014followed by a low, polite rumble that could be a greeting or a warning. You remember that in stories, portals are never just doors; they are invitations with consequences, and the brave part is choosing what kind of person walks through. You steady yourself, letting the moment stretch long enough to feel real, long enough to force the text panel to scroll the way we want during testing. The light doesn\u2019t blind you so much as it rewrites the shadows, turning edges soft and making everything look like it was painted with heat.\n\nDo you:\n\u2022 Continue forward to the next lesson?\n\u2022 Pause and ask a clarifying question?\n\u2022 Look for a private moment to steady yourself?",
+      "options": [
+        {
+          "label": "Next",
+          "to": "S06"
+        },
+        {
+          "label": "Ask",
+          "to": "S10"
+        },
+        {
+          "label": "Breathe",
+          "to": "S08"
+        }
+      ]
+    }
+  }
+}
