@@ -1,115 +1,159 @@
-/* dragonsoffire_panel.css - fixed art panel overlay positions (1080x1920 base) */
+/* dragonsoffire_panel.css
+   Panel harness styling for ui/panels/dragonsoffire-narrative-panel.webp
+
+   Goals:
+   - LOCK page scroll (only narrative scrolls).
+   - Narrative window can reserve space for future media.
+   - 4 choice pills always visible; labels clamp to 2 lines (Option B).
+*/
 
 :root {
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  /* Tune these two values to reserve space for future media. */
+  --narrative_h: 46%;   /* height of the narrative window within the panel */
+  --media_h: 18%;       /* reserved media area INSIDE the narrative window */
+  --narrative_pad: 14px;
+
+  --debug_outline: rgba(0, 255, 255, 0.45);
 }
 
+/* ===== Page Lock (prevents full-page scroll on iOS) ===== */
 html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  touch-action: manipulation;
 }
 
-/* Canvas scales to viewport while preserving the art aspect ratio */
-.panel-canvas {
+/* ===== Panel root ===== */
+.panel-root {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  max-width: calc(100vh * (1080 / 1920));
-  max-height: calc(100vw * (1920 / 1080));
-  margin: 0 auto;
-  background-image: url('../panels/dragonsoffire-narrative-panel.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 100dvh; /* modern iOS viewport unit */
+  overflow: hidden;
+
+  background: url("../panels/dragonsoffire-narrative-panel.webp") center/cover no-repeat;
 }
 
-/* Overlay layer matches the art bounds */
-.overlay {
+/* overlay layer */
+.panel-overlay {
   position: absolute;
   inset: 0;
 }
 
-/* Narrative text box (measured from the art) */
-#narrativeText {
+/* ===== Narrative region (measured from art) =====
+   Approx parchment bounds (1080x1920):
+   left ~ 9%, top ~ 17%, width ~ 63%, height ~ 48%
+*/
+#panelNarrativeWindow {
   position: absolute;
-  left: 4.35%;
-  top: 17.08%;
-  width: 67.69%;
-  height: 49.90%;
-  overflow-y: auto;
-  padding: 2.0%;
+  left: 9%;
+  top: 17.5%;
+  width: 63%;
+  height: var(--narrative_h);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   box-sizing: border-box;
-
-  /* readable defaults; later you can swap per-story */
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.4;
-  color: rgba(20, 10, 5, 0.92);
-
-  /* let the art show through */
-  background: transparent;
 }
 
-/* Four invisible buttons aligned to the pill art */
+/* reserved media area */
+#panelMedia {
+  flex: 0 0 auto;
+  height: var(--media_h);
+}
+
+/* scrollable text container */
+#panelNarrative {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  padding: var(--narrative_pad);
+  box-sizing: border-box;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.35;
+  color: rgba(30, 18, 10, 0.92);
+  white-space: pre-wrap;
+}
+
+/* ===== Choice pills (measured from art) ===== */
 .choice-pill {
   position: absolute;
-  left: 5.56%;
-  width: 68.43%;
+  left: 4.1%;
+  width: 71.8%;
+  height: 4.7%;
 
-  height: 4.15%;
-  border: 0;
-  padding: 0 6%;
-  box-sizing: border-box;
   background: transparent;
-  color: rgba(30, 20, 15, 0.90);
+  border: none;
+  padding: 10px 18px;
+  box-sizing: border-box;
+
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 600;
   font-size: 18px;
-  text-align: left;
+  line-height: 1.15;
+  color: rgba(40, 30, 22, 0.95);
 
+  text-align: center;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+
+  /* Option B: allow wrap but clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
 }
 
-/* Individual pill Y-positions */
-#choice0 { top: 70.26%; }
-#choice1 { top: 76.93%; }
-#choice2 { top: 83.65%; }
-#choice3 { top: 90.21%; }
+/* Button vertical positions (4 bars) */
+#choice0 { top: 69.8%; }
+#choice1 { top: 76.6%; }
+#choice2 { top: 83.3%; }
+#choice3 { top: 90.0%; }
 
-/* Debug readout (safe-area aware) */
-#debug {
-  position: fixed;
-  left: 10px;
-  top: calc(10px + var(--safe-top));
-  z-index: 9999;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 12px;
-  color: #0f0;
-  background: rgba(0,0,0,0.55);
-  padding: 6px 8px;
-  border-radius: 8px;
+.choice-pill:active {
+  filter: brightness(0.98);
 }
 
-/* Debug outlines (toggle by adding .debug to body) */
-body.debug #narrativeText,
-body.debug .choice-pill {
-  outline: 2px dashed rgba(0, 255, 255, 0.85);
-}
-
-/* Small screens */
-@media (max-width: 420px) {
-  #narrativeText { font-size: 16px; }
-  .choice-pill { font-size: 16px; }
-}
-
-
-/* Placeholder (disabled) choice slots remain visible during testing */
-.choice-pill:disabled {
+.choice-pill[disabled],
+.choice-pill[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.55;
+}
+
+/* ===== Debug mode ===== */
+html.debug #panelNarrativeWindow,
+html.debug #panelMedia,
+html.debug #panelNarrative,
+html.debug .choice-pill {
+  outline: 2px dashed var(--debug_outline);
+  outline-offset: -2px;
+}
+
+#debugBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,0.85);
+  color: #0ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  padding: 6px 10px;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
