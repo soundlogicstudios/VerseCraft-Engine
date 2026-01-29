@@ -1,83 +1,94 @@
-// panel_engine.js - renders story content into a fixed art panel overlay
-// additive module: does NOT change existing engine-state-test harness
+// panel_engine.js - panel harness renderer (additive)
+// Renders story text + up to 4 choices into a fixed art panel overlay.
+// Design goals:
+// - Page scroll is locked by CSS (only narrative container scrolls).
+// - Always show 4 choice slots for testing.
+// - If a slot has no option, show "Not a choice" and disable navigation.
 
 import { storyloader } from './storyloader.js';
 import { StoryAdapter } from './storyadapter.js';
 
 export class PanelEngine {
-  /**
-   * @param {{
-   *  storyTextEl: HTMLElement,
-   *  choiceButtons: HTMLButtonElement[],
-   *  debugEl?: HTMLElement
-   * }} targets
-   */
-  constructor(targets) {
-    this.targets = targets;
+  constructor(opts = {}) {
+    this.storyId = opts.storyId || 'world_of_lorecraft';
+    this.elNarrative = opts.elNarrative || null;
+    this.choiceButtons = opts.choiceButtons || [];
+    this.elDebug = opts.elDebug || null;
+
     this.story = null;
     this.adapter = null;
-    this._lastChoice = null;
   }
 
-  async init(storyId) {
-    this._debug(`loading story: ${storyId}...`);
-    this.story = await storyloader.load(storyId);
-    if (!this.story) {
-      this._debug('failed to load story json');
-      return;
-    }
-    this.adapter = new StoryAdapter(this, this.story);
-    this._debug(`loaded: ${this.story.meta?.title || storyId}`);
+  async init() {
+    this.story = await storyloader.load(this.storyId);
+    if (!this.story) throw new Error(`failed to load story: ${this.storyId}`);
+
+    // StoryAdapter expects an engine-like object with displaySection().
+    const engineShim = { displaySection: () => this.render() };
+    this.adapter = new StoryAdapter(engineShim, this.story);
+
+    this.bindChoiceHandlers();
     this.render();
+    this.debug(`✅ panel engine ready: ${this.story.meta?.title || this.storyId}`);
+  }
+
+  bindChoiceHandlers() {
+    this.choiceButtons.forEach((btn, i) => {
+      if (!btn) return;
+      btn.addEventListener('click', (e) => {
+        if (btn.disabled) return;
+        this.adapter.makeChoice(i);
+      });
+    });
   }
 
   render() {
-    const section = this.adapter?.getCurrentSection?.();
+    const section = this.adapter.getCurrentSection();
     if (!section) {
-      this._debug('missing section');
+      this.setNarrative('⚠️ missing section data.');
+      this.setChoices([]);
+      this.debug('⚠️ missing section data.');
       return;
     }
 
-    // narrative
-    const text = typeof section.text === 'string' ? section.text : String(section.text ?? '');
-    this.targets.storyTextEl.textContent = text;
+    this.setNarrative(section.text || '');
+    this.setChoices(section.options || []);
+    this.debug(`node=${this.adapter.current} choices=${(section.options || []).length}`);
+  }
 
-    // choices (panel has 4 slots; during testing we ALWAYS show all 4)
-    // If a slot has no corresponding option, show a disabled placeholder label and DO NOT allow navigation.
-    const opts = section.options || [];
-    this.targets.choiceButtons.forEach((btn, i) => {
-      const opt = opts[i];
+  setNarrative(text) {
+    if (!this.elNarrative) return;
+    // Preserve line breaks while remaining safe.
+    const safe = String(text).replace(/\r\n/g, '\n');
+    this.elNarrative.textContent = safe;
+    // Start at top each node for deterministic testing.
+    this.elNarrative.scrollTop = 0;
+  }
 
-      btn.style.display = ''; // always visible in this harness
+  setChoices(options) {
+    // Always show 4 buttons.
+    for (let i = 0; i < this.choiceButtons.length; i++) {
+      const btn = this.choiceButtons[i];
+      if (!btn) continue;
 
+      const opt = options[i];
       if (!opt) {
-        btn.disabled = true;
-        btn.onclick = null;
         btn.textContent = 'Not a choice';
-        return;
+        btn.disabled = true;
+        btn.setAttribute('aria-disabled', 'true');
+        btn.dataset.choice = 'empty';
+      } else {
+        btn.textContent = opt.label || `Choice ${i + 1}`;
+        btn.disabled = false;
+        btn.removeAttribute('aria-disabled');
+        btn.dataset.choice = 'live';
       }
-
-      btn.disabled = false;
-      btn.textContent = opt.label || '(choice)';
-      btn.onclick = () => {
-        this._lastChoice = { index: i, label: btn.textContent };
-        this.adapter.makeChoice(i);
-      };
-    });
-
-    this._debug(
-      `node: ${this.adapter.current} | choices: ${opts.length}` +
-      (this._lastChoice ? ` | last: [${this._lastChoice.index}] ${this._lastChoice.label}` : '')
-    );
+    }
   }
 
-  // called by StoryAdapter after a choice is applied
-  displaySection() {
-    this.render();
-  }
-
-  _debug(msg) {
-    if (!this.targets.debugEl) return;
-    this.targets.debugEl.textContent = msg;
+  debug(msg) {
+    if (this.elDebug) this.elDebug.textContent = msg;
+    // Also log to console for network/path troubleshooting.
+    console.log(`[panel] ${msg}`);
   }
 }
