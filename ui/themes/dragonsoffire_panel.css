@@ -1,14 +1,133 @@
-html,body{margin:0;overflow:hidden}
-.panel-root{width:100vw;height:100dvh;background:url("../panels/dragonsoffire-narrative-panel.webp") center/cover no-repeat;position:relative}
-.panel-overlay{position:absolute;inset:0}
-#panelNarrativeWindow{position:absolute;left:9%;top:17.5%;width:63%;height:46%;display:flex;flex-direction:column}
-#panelMedia{height:18%}
-#panelNarrative{flex:1;overflow-y:auto;padding:14px;font-family:serif}
-.choice-pill{position:absolute;left:4.1%;width:71.8%;height:4.7%;padding:12px;text-align:center;font-size:18px;background:none;border:none}
-#choice0{top:69.8%}#choice1{top:76.6%}#choice2{top:83.3%}#choice3{top:90%}
-#vcDebugBar{position:fixed;top:8px;left:8px;z-index:9999}
-#vcDebugBar button{margin-right:6px}
-#debugBanner{position:fixed;top:0;left:0;right:0;background:black;color:cyan;font-size:12px;display:none}
-#vcAssetsPanel{position:fixed;bottom:8px;left:8px;background:black;color:white;font-size:12px;display:none;max-height:40vh;overflow:auto;padding:8px}
-#vcCalibHUD{position:fixed;right:8px;bottom:8px;background:black;color:#0ff;font-size:13px;padding:10px;border-radius:8px;display:none}
-html.debug .choice-pill{outline:1px dashed cyan}
+html, body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Panel background */
+.panel-root {
+  width: 100vw;
+  height: 100dvh;
+  position: relative;
+  background: url("../panels/dragonsoffire-narrative-panel.webp")
+    center / cover no-repeat;
+}
+
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Narrative window */
+#panelNarrativeWindow {
+  position: absolute;
+  left: 9%;
+  top: 17.5%;
+  width: 63%;
+  height: 46%;
+  display: flex;
+  flex-direction: column;
+}
+
+#panelMedia {
+  height: 18%;
+}
+
+#panelNarrative {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  font-family: serif;
+}
+
+/* =========================================================
+   Choice Pills — LOCKED CALIBRATED POSITIONS
+   ========================================================= */
+
+.choice-pill {
+  position: absolute;
+  width: 71.8%;
+  height: 4.7%;
+  padding: 12px;
+  text-align: center;
+  font-size: 18px;
+  background: none;
+  border: none;
+}
+
+/* Calibrated via Debug HUD (percent of .panel-root) */
+
+#choice0 {
+  left: 4.36%;
+  top: 70.72%;
+}
+
+#choice1 {
+  left: 4.63%;
+  top: 78.14%;
+}
+
+#choice2 {
+  left: 4.37%;
+  top: 84.7%;
+}
+
+#choice3 {
+  left: 4.36%;
+  top: 91.7%;
+}
+
+/* Debug visuals */
+html.debug .choice-pill {
+  outline: 1px dashed cyan;
+}
+
+/* Debug toolbar */
+#vcDebugBar {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 9999;
+}
+
+#vcDebugBar button {
+  margin-right: 6px;
+}
+
+/* Debug banner */
+#debugBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: cyan;
+  font-size: 12px;
+  display: none;
+}
+
+/* Assets panel */
+#vcAssetsPanel {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  display: none;
+  max-height: 40vh;
+  overflow: auto;
+  padding: 8px;
+}
+
+/* Calibration HUD */
+#vcCalibHUD {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  background: black;
+  color: #0ff;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+}
