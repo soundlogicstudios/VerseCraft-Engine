@@ -1,5 +1,5 @@
 {
-  "catalogversion": "0.0.02",
+  "catalogversion": "0.0.03",
   "packs": [
     {
       "pack_id": "starter",
@@ -10,6 +10,11 @@
       "pack_id": "echoes_beneath_the_lantern",
       "title": "echoes beneath the lantern",
       "path": "./library/echoes_beneath_the_lantern.json"
+    },
+    {
+      "pack_id": "dragons_of_fire",
+      "title": "Dragons Of Fire",
+      "path": "./library/dragons_of_fire.json"
     }
   ]
 }
