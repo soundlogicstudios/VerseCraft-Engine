@@ -1,0 +1,115 @@
+/* dragonsoffire_panel.css - fixed art panel overlay positions (1080x1920 base) */
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* Canvas scales to viewport while preserving the art aspect ratio */
+.panel-canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: calc(100vh * (1080 / 1920));
+  max-height: calc(100vw * (1920 / 1080));
+  margin: 0 auto;
+  background-image: url('../panels/dragonsoffire-narrative-panel.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Overlay layer matches the art bounds */
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Narrative text box (measured from the art) */
+#narrativeText {
+  position: absolute;
+  left: 4.35%;
+  top: 17.08%;
+  width: 67.69%;
+  height: 49.90%;
+  overflow-y: auto;
+  padding: 2.0%;
+  box-sizing: border-box;
+
+  /* readable defaults; later you can swap per-story */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: rgba(20, 10, 5, 0.92);
+
+  /* let the art show through */
+  background: transparent;
+}
+
+/* Four invisible buttons aligned to the pill art */
+.choice-pill {
+  position: absolute;
+  left: 5.56%;
+  width: 68.43%;
+
+  height: 4.15%;
+  border: 0;
+  padding: 0 6%;
+  box-sizing: border-box;
+  background: transparent;
+  color: rgba(30, 20, 15, 0.90);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Individual pill Y-positions */
+#choice0 { top: 70.26%; }
+#choice1 { top: 76.93%; }
+#choice2 { top: 83.65%; }
+#choice3 { top: 90.21%; }
+
+/* Debug readout (safe-area aware) */
+#debug {
+  position: fixed;
+  left: 10px;
+  top: calc(10px + var(--safe-top));
+  z-index: 9999;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  color: #0f0;
+  background: rgba(0,0,0,0.55);
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+/* Debug outlines (toggle by adding .debug to body) */
+body.debug #narrativeText,
+body.debug .choice-pill {
+  outline: 2px dashed rgba(0, 255, 255, 0.85);
+}
+
+/* Small screens */
+@media (max-width: 420px) {
+  #narrativeText { font-size: 16px; }
+  .choice-pill { font-size: 16px; }
+}
+
+
+/* Placeholder (disabled) choice slots remain visible during testing */
+.choice-pill:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
