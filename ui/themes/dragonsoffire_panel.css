@@ -14,6 +14,13 @@
   --narrative_pad: 14px;
 
   --debug_outline: rgba(0, 255, 255, 0.45);
+
+  /* ===== Pill micro-alignment (your requested tweaks) =====
+     - Text down ~0.5% => use 0.5vh (0.5% of viewport height)
+     - Spread between pills ~0.5% => also 0.5vh added per row
+  */
+  --pill_text_down: 0.5vh;
+  --pill_spread_add: 0.5vh;
 }
 
 /* ===== Page Lock (prevents full-page scroll on iOS) ===== */
@@ -32,6 +39,7 @@ body {
   overflow: hidden;
   -webkit-text-size-adjust: 100%;
 }
+
 /* ===== Panel root ===== */
 .panel-root {
   position: relative;
@@ -97,7 +105,10 @@ body {
 
   background: transparent;
   border: none;
-  padding: 10px 18px;
+
+  /* move the TEXT down slightly without moving the hitbox */
+  padding: calc(10px + var(--pill_text_down)) 18px 10px 18px;
+
   box-sizing: border-box;
 
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -116,11 +127,13 @@ body {
   white-space: normal;
 }
 
-/* Button vertical positions (4 bars) */
+/* Button vertical positions (4 bars)
+   Spread increased by ~0.5% (0.5vh) per row starting at choice1.
+*/
 #choice0 { top: 69.8%; }
-#choice1 { top: 76.6%; }
-#choice2 { top: 83.3%; }
-#choice3 { top: 90.0%; }
+#choice1 { top: calc(76.6% + (1 * var(--pill_spread_add))); }
+#choice2 { top: calc(83.3% + (2 * var(--pill_spread_add))); }
+#choice3 { top: calc(90.0% + (3 * var(--pill_spread_add))); }
 
 .choice-pill:active {
   filter: brightness(0.98);
