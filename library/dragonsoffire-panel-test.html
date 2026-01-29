@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dragons Of Fire — Panel Harness</title>
+
+  <link rel="stylesheet" href="./ui/themes/dragonsoffire_panel.css" />
+</head>
+<body>
+  <div id="debugBanner"></div>
+
+  <!-- Story selector (test harness only) -->
+  <div id="storySelectUI" aria-label="Story selector">
+    <label for="storySelect" class="sr-only">Story</label>
+    <select id="storySelect"></select>
+  </div>
+
+  <div class="panel-root" id="panelRoot">
+    <div class="panel-overlay">
+      <!-- Narrative window (contains reserved media region + scrollable text) -->
+      <div id="panelNarrativeWindow">
+        <div id="panelMedia" aria-hidden="true"></div>
+        <div id="panelNarrative"></div>
+      </div>
+
+      <!-- Choice pill hit targets -->
+      <button id="choice0" class="choice-pill" type="button"></button>
+      <button id="choice1" class="choice-pill" type="button"></button>
+      <button id="choice2" class="choice-pill" type="button"></button>
+      <button id="choice3" class="choice-pill" type="button"></button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { PanelEngine } from './core/panel_engine.js';
+
+    const qs = new URLSearchParams(location.search);
+    const storyId = qs.get('story') || 'world_of_lorecraft';
+    const debug = qs.has('debug');
+
+    document.documentElement.classList.toggle('debug', debug);
+
+    // Debug banner: confirms active page + story + cache-ish navigation type.
+    const nav = performance.getEntriesByType('navigation')[0];
+    const cacheTag = (nav && nav.transferSize === 0) ? 'CACHED' : 'FRESH';
+    const banner = document.getElementById('debugBanner');
+    banner.textContent = `SCREEN: ${location.pathname.split('/').pop()} | story=${storyId} | ${cacheTag} | ?debug=1`;
+
+    // Populate story selector (kept local & explicit for the harness)
+    const STORIES = [
+      { id: 'world_of_lorecraft', title: 'World Of Lorecraft' },
+      { id: 'echoes_beneath_the_lantern', title: 'Echoes Beneath The Lantern' },
+      { id: 'dragons_of_fire', title: 'Dragons Of Fire' }
+    ];
+
+    const sel = document.getElementById('storySelect');
+    sel.innerHTML = STORIES.map(s => `<option value="${s.id}">${s.title}</option>`).join('');
+    sel.value = storyId;
+
+    sel.addEventListener('change', () => {
+      const next = sel.value;
+      const nextQs = new URLSearchParams(location.search);
+      nextQs.set('story', next);
+      if (debug) nextQs.set('debug', '1');
+      location.search = nextQs.toString();
+    });
+
+    const engine = new PanelEngine({
+      storyId,
+      elNarrative: document.getElementById('panelNarrative'),
+      choiceButtons: [
+        document.getElementById('choice0'),
+        document.getElementById('choice1'),
+        document.getElementById('choice2'),
+        document.getElementById('choice3'),
+      ],
+      elDebug: banner
+    });
+
+    engine.init().catch((err) => {
+      console.error(err);
+      banner.textContent = `❌ ${err.message || err}`;
+    });
+  </script>
+</body>
+</html>
