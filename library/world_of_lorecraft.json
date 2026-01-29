@@ -11,7 +11,7 @@
   },
   "scenes": {
     "S01": {
-      "text": "S01 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S01]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Step into the ruin",
@@ -24,7 +24,7 @@
       ]
     },
     "S02": {
-      "text": "S02 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S02]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Take the corridor straight ahead",
@@ -37,7 +37,7 @@
       ]
     },
     "S03": {
-      "text": "S03 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S03]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Enter the ruin with your guard up",
@@ -50,7 +50,7 @@
       ]
     },
     "S04": {
-      "text": "S04 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S04]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Rip the dart free and keep moving",
@@ -63,7 +63,7 @@
       ]
     },
     "S05": {
-      "text": "S05 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S05]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Continue deeper",
@@ -76,7 +76,7 @@
       ]
     },
     "S06": {
-      "text": "S06 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S06]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Take the herbs and buckler",
@@ -89,7 +89,7 @@
       ]
     },
     "S07": {
-      "text": "S07 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S07]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Hide behind a broken pillar",
@@ -106,7 +106,7 @@
       ]
     },
     "S08": {
-      "text": "S08 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S08]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Continue into the hall",
@@ -115,7 +115,7 @@
       ]
     },
     "S09": {
-      "text": "S09 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S09]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Raise your candle and examine the reliquary",
@@ -128,7 +128,7 @@
       ]
     },
     "S10": {
-      "text": "S10 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S10]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Hold your breath and wait for it to pass",
@@ -141,7 +141,7 @@
       ]
     },
     "S11": {
-      "text": "S11 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S11]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Slash with your Rusty Dagger",
@@ -154,7 +154,7 @@
       ]
     },
     "S12": {
-      "text": "S12 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S12]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return to the hall and face whatever is there",
@@ -167,7 +167,7 @@
       ]
     },
     "S13": {
-      "text": "S13 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S13]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Take the Warden Sigil",
@@ -180,7 +180,7 @@
       ]
     },
     "S14": {
-      "text": "S14 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S14]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Slip toward the chapel door",
@@ -193,7 +193,7 @@
       ]
     },
     "S15": {
-      "text": "S15 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S15]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Press the attack",
@@ -206,7 +206,7 @@
       ]
     },
     "S16": {
-      "text": "S16 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S16]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Sprint toward the chapel door",
@@ -219,7 +219,7 @@
       ]
     },
     "S17": {
-      "text": "S17 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S17]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return to the shattered hall",
@@ -232,7 +232,7 @@
       ]
     },
     "S18": {
-      "text": "S18 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S18]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Throw a pebble into the pool",
@@ -245,7 +245,7 @@
       ]
     },
     "S19": {
-      "text": "S19 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S19]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Take the vial",
@@ -258,7 +258,7 @@
       ]
     },
     "S20": {
-      "text": "S20 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S20]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Take the chapel route",
@@ -271,7 +271,7 @@
       ]
     },
     "S21": {
-      "text": "S21 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S21]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Proceed to the hall’s far passage",
@@ -280,7 +280,7 @@
       ]
     },
     "S22": {
-      "text": "S22 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S22]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Run. Now.",
@@ -293,7 +293,7 @@
       ]
     },
     "S23": {
-      "text": "S23 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S23]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Pocket the vial and move on",
@@ -302,7 +302,7 @@
       ]
     },
     "S24": {
-      "text": "S24 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S24]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Press the Warden Sigil to the indentation",
@@ -319,7 +319,7 @@
       ]
     },
     "S25": {
-      "text": "S25 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S25]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Try to wrench free",
@@ -332,7 +332,7 @@
       ]
     },
     "S26": {
-      "text": "S26 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S26]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Step through anyway",
@@ -345,7 +345,7 @@
       ]
     },
     "S27": {
-      "text": "S27 narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — S27]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Retreat to the stairwell and reassess",
@@ -358,7 +358,7 @@
       ]
     },
     "GOOD_END": {
-      "text": "GOOD_END narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — GOOD_END]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return To Main Menu",
@@ -367,7 +367,7 @@
       ]
     },
     "BAD_END": {
-      "text": "BAD_END narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — BAD_END]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return To Main Menu",
@@ -376,7 +376,7 @@
       ]
     },
     "SPECIAL_END": {
-      "text": "SPECIAL_END narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — SPECIAL_END]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return To Main Menu",
@@ -385,7 +385,7 @@
       ]
     },
     "DEATH": {
-      "text": "DEATH narrative text placeholder.",
+      "text": "[Lorecraft Tutorial — DEATH]\n\nThis is intentionally long test text for VerseCraft’s panel harness. Its job is to force the narrative region to scroll while keeping the page itself locked. Readability matters less than volume here: we want multiple paragraphs, punctuation, and line breaks.\n\nThe air tastes like iron and dust. Somewhere behind the UI frame, the world keeps moving—embers lift, shadows shift, and distant thunder rolls with a steady, patient rhythm. Your attention stays on the parchment: the words should remain inside the frame, never pushing the screen into a full-page scroll.\n\nIf you see this text extend beyond the narrative window without scrolling, the container sizing is wrong. If the whole screen scrolls, the page lock is wrong. If the choice labels wrap and look double-spaced, the pill clamp rules need tuning.\n\nKeep going. Add more text. Add more lines. Add more words. We’re stress-testing the layout so later, real story prose and media can slot in cleanly.\n\nFinal paragraph: iOS Safari is picky about viewport height. This is why we use modern viewport units (dvh) and isolate scrolling to the narrative element only.",
       "options": [
         {
           "label": "Return To Main Menu",
