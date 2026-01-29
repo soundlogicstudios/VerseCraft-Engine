@@ -3,7 +3,9 @@ html, body {
   overflow: hidden;
 }
 
-/* Panel background */
+/* =========================================================
+   Panel Root
+   ========================================================= */
 .panel-root {
   width: 100vw;
   height: 100dvh;
@@ -17,7 +19,9 @@ html, body {
   inset: 0;
 }
 
-/* Narrative window */
+/* =========================================================
+   Narrative Window
+   ========================================================= */
 #panelNarrativeWindow {
   position: absolute;
   left: 9%;
@@ -40,21 +44,53 @@ html, body {
 }
 
 /* =========================================================
-   Choice Pills — LOCKED CALIBRATED POSITIONS
+   Choice Pills — Hitbox + Label Binding
    ========================================================= */
+
+/* Tunable visual offset for label centering */
+:root {
+  --pill-label-offset-y: 0.35em; /* tweak if needed */
+}
 
 .choice-pill {
   position: absolute;
   width: 71.8%;
   height: 4.7%;
-  padding: 12px;
-  text-align: center;
-  font-size: 18px;
+
+  /* This is the IMPORTANT PART */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: none;
   border: none;
+  cursor: pointer;
+
+  /* Hitbox is the button; no padding here */
+  padding: 0;
 }
 
-/* Calibrated via Debug HUD (percent of .panel-root) */
+/* Label text */
+.choice-pill span {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  max-width: 100%;
+  padding: 0 16px;
+
+  font-size: 18px;
+  line-height: 1.15;
+  text-align: center;
+
+  /* Visual centering tweak */
+  transform: translateY(var(--pill-label-offset-y));
+}
+
+/* =========================================================
+   LOCKED CALIBRATED POSITIONS (FROM YOUR DEBUG HUD)
+   ========================================================= */
 
 #choice0 {
   left: 4.36%;
@@ -76,12 +112,14 @@ html, body {
   top: 91.7%;
 }
 
-/* Debug visuals */
+/* =========================================================
+   Debug Helpers
+   ========================================================= */
+
 html.debug .choice-pill {
   outline: 1px dashed cyan;
 }
 
-/* Debug toolbar */
 #vcDebugBar {
   position: fixed;
   top: 8px;
@@ -93,7 +131,6 @@ html.debug .choice-pill {
   margin-right: 6px;
 }
 
-/* Debug banner */
 #debugBanner {
   position: fixed;
   top: 0;
@@ -105,7 +142,6 @@ html.debug .choice-pill {
   display: none;
 }
 
-/* Assets panel */
 #vcAssetsPanel {
   position: fixed;
   bottom: 8px;
@@ -119,7 +155,6 @@ html.debug .choice-pill {
   padding: 8px;
 }
 
-/* Calibration HUD */
 #vcCalibHUD {
   position: fixed;
   right: 8px;
