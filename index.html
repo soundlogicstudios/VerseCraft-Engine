@@ -2,37 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerseCraft Main</title>
-  <style>
-    body { background:#000; color:#fff; text-align:center; font-family:system-ui; margin-top:3rem; }
-    a { color:#0f0; text-decoration:none; font-size:1.5rem; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>VerseCraft Engine — Single Page Harness</title>
+  <link rel="stylesheet" href="./ui/themes/dragonsoffire_panel.css" />
 </head>
 <body>
-  <h1>VerseCraft Platform</h1>
-  <p><a href="./engine-state-test.html">Launch Engine Test</a></p>
- <script>
-(function () {
-  const banner = document.createElement("div");
-  banner.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    background: rgba(0,0,0,0.85);
-    color: #0ff;
-    font-family: monospace;
-    font-size: 12px;
-    padding: 6px 10px;
-    pointer-events: none;
-  `;
-  banner.textContent =
-    "SCREEN: " + location.pathname.split("/").pop() +
-    " | CACHE: " + (performance.getEntriesByType("navigation")[0]?.transferSize === 0 ? "CACHED" : "FRESH");
-  document.body.appendChild(banner);
-})();
-</script> 
+
+<div class="panel-root" id="panelRoot">
+  <div class="panel-overlay">
+
+    <!-- Debug Toolbar -->
+    <div id="vcDebugBar">
+      <button id="btnDebug">Debug</button>
+      <button id="btnAssets">Assets</button>
+      <button id="btnDrag">Drag Pills</button>
+    </div>
+
+    <!-- Narrative -->
+    <div id="panelNarrativeWindow">
+      <div id="panelMedia"></div>
+      <div id="panelNarrative"></div>
+    </div>
+
+    <!-- Choice Pills -->
+    <button id="choice0" class="choice-pill"><span></span></button>
+    <button id="choice1" class="choice-pill"><span></span></button>
+    <button id="choice2" class="choice-pill"><span></span></button>
+    <button id="choice3" class="choice-pill"><span></span></button>
+
+    <!-- Debug Outputs -->
+    <div id="debugBanner"></div>
+    <div id="vcAssetsPanel"></div>
+
+  </div>
+</div>
+
+<script type="module">
+  import { PanelEngine } from "./core/panel_engine.js";
+  import { initDebugTools } from "./core/debug_tools.js";
+
+  const engine = new PanelEngine({
+    narrativeEl: document.getElementById("panelNarrative"),
+    choiceButtons: [
+      document.getElementById("choice0"),
+      document.getElementById("choice1"),
+      document.getElementById("choice2"),
+      document.getElementById("choice3"),
+    ]
+  });
+
+  await engine.init("world_of_lorecraft");
+
+  initDebugTools({
+    panelRoot: document.getElementById("panelRoot"),
+    choiceButtons: engine.choiceButtons,
+    debugBanner: document.getElementById("debugBanner"),
+    assetsPanel: document.getElementById("vcAssetsPanel"),
+    btnDebug: document.getElementById("btnDebug"),
+    btnAssets: document.getElementById("btnAssets"),
+    btnDrag: document.getElementById("btnDrag"),
+  });
+</script>
+
 </body>
 </html>
