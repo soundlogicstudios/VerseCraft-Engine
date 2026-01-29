@@ -12,5 +12,27 @@
 <body>
   <h1>VerseCraft Platform</h1>
   <p><a href="./engine-state-test.html">Launch Engine Test</a></p>
+ <script>
+(function () {
+  const banner = document.createElement("div");
+  banner.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,0.85);
+    color: #0ff;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 6px 10px;
+    pointer-events: none;
+  `;
+  banner.textContent =
+    "SCREEN: " + location.pathname.split("/").pop() +
+    " | CACHE: " + (performance.getEntriesByType("navigation")[0]?.transferSize === 0 ? "CACHED" : "FRESH");
+  document.body.appendChild(banner);
+})();
+</script> 
 </body>
 </html>
