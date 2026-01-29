@@ -9,4 +9,6 @@ html,body{margin:0;overflow:hidden}
 #vcDebugBar{position:fixed;top:8px;left:8px;z-index:9999}
 #vcDebugBar button{margin-right:6px}
 #debugBanner{position:fixed;top:0;left:0;right:0;background:black;color:cyan;font-size:12px;display:none}
-#vcAssetsPanel{position:fixed;bottom:8px;left:8px;background:black;color:white;font-size:12px;display:none}
+#vcAssetsPanel{position:fixed;bottom:8px;left:8px;background:black;color:white;font-size:12px;display:none;max-height:40vh;overflow:auto;padding:8px}
+#vcCalibHUD{position:fixed;right:8px;bottom:8px;background:black;color:#0ff;font-size:13px;padding:10px;border-radius:8px;display:none}
+html.debug .choice-pill{outline:1px dashed cyan}
