@@ -1,51 +1,90 @@
-export function initDebugTools({ panelRoot, choiceButtons, debugBanner, assetsPanel, btnDebug, btnAssets, btnDrag }) {
+export function initDebugTools({ panelRoot, choiceButtons, debugBanner, assetsPanel, calibHUD, btnDebug, btnAssets, btnDrag }) {
   let debug=false, assets=false, drag=false, active=null;
+
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const round=n=>Math.round(n*100)/100;
+
+  function rootRect(){ return panelRoot.getBoundingClientRect(); }
+  function pct(px, base){ return px/base*100; }
+
+  function updateHUD(el){
+    if(!debug||!el){ calibHUD.style.display="none"; return; }
+    const r=rootRect(), b=el.getBoundingClientRect();
+    const data={
+      id: el.id,
+      x: round(pct(b.left-r.left,r.width)),
+      y: round(pct(b.top-r.top,r.height)),
+      w: round(pct(b.width,r.width)),
+      h: round(pct(b.height,r.height)),
+    };
+    calibHUD.style.display="block";
+    calibHUD.innerHTML = `
+      <strong>${data.id}</strong><br/>
+      left: ${data.x}%<br/>
+      top: ${data.y}%<br/>
+      width: ${data.w}%<br/>
+      height: ${data.h}%<br/><br/>
+      <button id="copyCss">COPY CSS</button>
+      <button id="copyJson">COPY JSON</button>
+    `;
+    calibHUD.querySelector("#copyCss").onclick=()=>{
+      navigator.clipboard.writeText(`#${data.id} { left:${data.x}%; top:${data.y}%; width:${data.w}%; height:${data.h}%; }`);
+    };
+    calibHUD.querySelector("#copyJson").onclick=()=>{
+      navigator.clipboard.writeText(JSON.stringify(data,null,2));
+    };
+  }
 
   btnDebug.onclick=()=>{
     debug=!debug;
     document.documentElement.classList.toggle("debug",debug);
     debugBanner.style.display=debug?"block":"none";
-    debugBanner.textContent=location.pathname;
+    debugBanner.textContent=`DEBUG MODE — ${location.pathname}`;
+    if(!debug){ calibHUD.style.display="none"; }
   };
 
   btnAssets.onclick=()=>{
     assets=!assets;
     assetsPanel.style.display=assets?"block":"none";
-    assetsPanel.textContent=[...document.styleSheets].map(s=>s.href).join("\n");
+    assetsPanel.textContent=[
+      "ACTIVE ASSETS",
+      "",
+      "HTML",
+      location.pathname,
+      "",
+      "CSS",
+      ...[...document.styleSheets].map(s=>s.href||"INLINE"),
+      "",
+      "PANEL BG",
+      getComputedStyle(panelRoot).backgroundImage
+    ].join("\n");
   };
-
-  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  const round=n=>Math.round(n*100)/100;
 
   btnDrag.onclick=()=>{
     drag=!drag;
-    choiceButtons.forEach(b=>{
-      b.style.outline=drag?"2px dashed cyan":"";
-      b.style.touchAction="none";
-    });
+    choiceButtons.forEach(b=>b.style.outline=drag?"2px dashed cyan":"");
   };
 
   choiceButtons.forEach(el=>{
     el.onpointerdown=e=>{
       if(!drag)return;
-      const r=panelRoot.getBoundingClientRect();
-      const b=el.getBoundingClientRect();
-      active={el,x:e.clientX,y:e.clientY,l:b.left-r.left,t:b.top-r.top,w:b.width,h:b.height,r};
+      const r=rootRect(), b=el.getBoundingClientRect();
+      active={el,x:e.clientX,y:e.clientY,l:b.left-r.left,t:b.top-r.top,w:b.width,h:b.height};
       el.setPointerCapture(e.pointerId);
+      updateHUD(el);
     };
     el.onpointermove=e=>{
       if(!active||!drag)return;
-      let dx=e.clientX-active.x,dy=e.clientY-active.y;
-      let l=clamp(active.l+dx,0,active.r.width-active.w);
-      let t=clamp(active.t+dy,0,active.r.height-active.h);
-      el.style.left=round(l/active.r.width*100)+"%";
-      el.style.top=round(t/active.r.height*100)+"%";
+      const r=rootRect();
+      let l=clamp(active.l+(e.clientX-active.x),0,r.width-active.w);
+      let t=clamp(active.t+(e.clientY-active.y),0,r.height-active.h);
+      el.style.left=round(pct(l,r.width))+"%";
+      el.style.top=round(pct(t,r.height))+"%";
+      updateHUD(el);
     };
     el.onpointerup=e=>{
       if(!active)return;
-      const r=panelRoot.getBoundingClientRect();
-      const b=el.getBoundingClientRect();
-      console.log(`#${el.id} { left:${round((b.left-r.left)/r.width*100)}%; top:${round((b.top-r.top)/r.height*100)}%; width:${round(b.width/r.width*100)}%; height:${round(b.height/r.height*100)}%; }`);
+      updateHUD(el);
       active=null;
     };
   });
