@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "id": "interrogation_no_file",
+    "title": "Interrogation: The Room With No File",
+    "route": "story_interrogation_no_file",
+    "schema": "versecraft_story_v1",
+    "tone": "psychological_detective",
+    "notes": "Five-minute interrogation prototype. Fixed four-choice interface. S09 presents final decision labels (continued detention, authorize release, escalate case, walk away/say nothing). Endings S10-S13 include a single restart choice (PLAY AGAIN) back to S01; remaining buttons are blank labels but still route to S01 to avoid dead UI. Printed CHOICES blocks preserved for readability. ASCII-only. Replay one-liners included in S01, S02, S03, S04, S06 via [REPLAY] marker.",
+    "blurb": "You enter an interrogation room with no file, no transcript, and no certainty. The only thing you know is that this meeting matters."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "id": "S01",
+      "text": "The room smells faintly of disinfectant.\n\nThe person across from you sits with their hands folded. Not restrained. Not relaxed.\n\nThey look up when you enter.\n\n\"Am I free to go?\"\n\n[REPLAY]\nThe question lands faster this time, like it has been asked before.\n\nCHOICES\n\nAPPLY PRESSURE\nYou establish authority immediately. You are not here to comfort them.\n\nOFFER UNDERSTANDING\nYou lower the temperature. You signal that you are listening.\n\nCHALLENGE STATEMENT\nYou reject the framing and force clarity.\n\nSAY NOTHING\nYou let silence begin the interrogation.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S02" },
+        { "label": "OFFER UNDERSTANDING", "to": "S02" },
+        { "label": "CHALLENGE STATEMENT", "to": "S02" },
+        { "label": "SAY NOTHING", "to": "S02" }
+      ]
+    },
+    "S02": {
+      "id": "S02",
+      "text": "You take your seat. The chair legs scrape lightly on tile.\n\nThey keep their hands folded. Their posture is measured.\n\n\"I have already told them everything I know,\" they say.\n\nThey do not sound angry.\nThey sound practiced.\n\n[REPLAY]\nYou remember this line. The delivery is identical.\n\nCHOICES\n\nAPPLY PRESSURE\nYou tighten the room and test the script.\n\nOFFER UNDERSTANDING\nYou invite deviation without threat.\n\nCHALLENGE STATEMENT\nYou demand specifics.\n\nSAY NOTHING\nYou let discomfort grow.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S03" },
+        { "label": "OFFER UNDERSTANDING", "to": "S03" },
+        { "label": "CHALLENGE STATEMENT", "to": "S03" },
+        { "label": "SAY NOTHING", "to": "S03" }
+      ]
+    },
+    "S03": {
+      "id": "S03",
+      "text": "\"You people always think you know how this goes,\" they say.\n\nThey stop themselves.\n\n\"...sorry.\"\n\n[REPLAY]\nLast time, you believed that apology meant something.\n\nCHOICES\n\nAPPLY PRESSURE\nYou push past the apology.\n\nOFFER UNDERSTANDING\nYou treat the slip as a crack.\n\nCHALLENGE STATEMENT\nYou isolate the phrase and force ownership.\n\nSAY NOTHING\nYou let the apology hang.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S04" },
+        { "label": "OFFER UNDERSTANDING", "to": "S04" },
+        { "label": "CHALLENGE STATEMENT", "to": "S04" },
+        { "label": "SAY NOTHING", "to": "S04" }
+      ]
+    },
+    "S04": {
+      "id": "S04",
+      "text": "\"I did not say I was there,\" they say.\n\nYou are fairly certain they did.\n\nThere is no transcript. No file. Just memory.\n\n[REPLAY]\nYou hesitate, not because you doubt them, but because you doubt yourself.\n\nCHOICES\n\nAPPLY PRESSURE\nYou assert your certainty.\n\nOFFER UNDERSTANDING\nYou allow room for error.\n\nCHALLENGE STATEMENT\nYou demand a concrete anchor.\n\nSAY NOTHING\nYou let the contradiction sit.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S05" },
+        { "label": "OFFER UNDERSTANDING", "to": "S05" },
+        { "label": "CHALLENGE STATEMENT", "to": "S05" },
+        { "label": "SAY NOTHING", "to": "S05" }
+      ]
+    },
+    "S05": {
+      "id": "S05",
+      "text": "Their jaw tightens.\n\n\"You do not understand what happens if I talk,\" they say.\n\nIt is not a confession.\nIt is a warning.\nOr fear.\nOr a test.\n\nCHOICES\n\nAPPLY PRESSURE\nYou treat fear as leverage.\n\nOFFER UNDERSTANDING\nYou invite explanation without promise.\n\nCHALLENGE STATEMENT\nYou demand they define the threat.\n\nSAY NOTHING\nYou offer only space.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S06" },
+        { "label": "OFFER UNDERSTANDING", "to": "S06" },
+        { "label": "CHALLENGE STATEMENT", "to": "S06" },
+        { "label": "SAY NOTHING", "to": "S06" }
+      ]
+    },
+    "S06": {
+      "id": "S06",
+      "text": "The clock on the wall clicks louder than it should.\n\nA long silence settles between you.\n\nThey glance at your hands, then your face, like they are trying to measure you.\n\n[REPLAY]\nYou know how long this silence can last. It still feels longer.\n\nCHOICES\n\nAPPLY PRESSURE\nYou break the silence hard.\n\nOFFER UNDERSTANDING\nYou break it gently.\n\nCHALLENGE STATEMENT\nYou force a response.\n\nSAY NOTHING\nYou let silence work.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S07" },
+        { "label": "OFFER UNDERSTANDING", "to": "S07" },
+        { "label": "CHALLENGE STATEMENT", "to": "S07" },
+        { "label": "SAY NOTHING", "to": "S07" }
+      ]
+    },
+    "S07": {
+      "id": "S07",
+      "text": "\"I just want this to be over,\" they say.\n\nTheir eyes flick toward the door.\n\nThat movement could mean escape.\nOr rescue.\nOr threat.\n\nCHOICES\n\nAPPLY PRESSURE\nYou do not let them escape the moment.\n\nOFFER UNDERSTANDING\nYou humanize the plea.\n\nCHALLENGE STATEMENT\nYou reject comfort for clarity.\n\nSAY NOTHING\nYou wait.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S08" },
+        { "label": "OFFER UNDERSTANDING", "to": "S08" },
+        { "label": "CHALLENGE STATEMENT", "to": "S08" },
+        { "label": "SAY NOTHING", "to": "S08" }
+      ]
+    },
+    "S08": {
+      "id": "S08",
+      "text": "\"If I leave here...\" they start.\n\nThey stop.\n\n\"...that is on you, right?\"\n\nThey are offering you weight.\nThey are handing you responsibility.\n\nYou still do not know what the stakes are.\nOnly that the meeting matters.\n\nCHOICES\n\nAPPLY PRESSURE\nYou refuse the moral trap.\n\nOFFER UNDERSTANDING\nYou accept the weight.\n\nCHALLENGE STATEMENT\nYou confront the manipulation.\n\nSAY NOTHING\nYou do not answer.",
+      "choices": [
+        { "label": "APPLY PRESSURE", "to": "S09" },
+        { "label": "OFFER UNDERSTANDING", "to": "S09" },
+        { "label": "CHALLENGE STATEMENT", "to": "S09" },
+        { "label": "SAY NOTHING", "to": "S09" }
+      ]
+    },
+    "S09": {
+      "id": "S09",
+      "text": "The room waits.\n\nThis is the decision.\n\nCHOICES\n\nREQUEST CONTINUED DETENTION\nYou choose to hold them. You treat uncertainty as danger.\n\nAUTHORIZE RELEASE\nYou choose to release them. You refuse to cage someone on instinct.\n\nESCALATE THE CASE\nYou pass the weight upward and invite a bigger machine into the room.\n\nWALK AWAY\nYou do nothing now and let time choose for you.",
+      "choices": [
+        { "label": "REQUEST CONTINUED DETENTION", "to": "S10" },
+        { "label": "AUTHORIZE RELEASE", "to": "S11" },
+        { "label": "ESCALATE THE CASE", "to": "S12" },
+        { "label": "WALK AWAY", "to": "S13" }
+      ]
+    },
+    "S10": {
+      "id": "S10",
+      "text": "You request continued detention.\n\nPaperwork replaces eye contact.\n\nThey do not plead.\nThey do not rage.\nThey only watch you like they are memorizing your face.\n\nYou never learn if it was justice or caution.\n\nOnly that you chose control over doubt.\n\nCHOICES\n\nPLAY AGAIN\nReturn to the beginning.\n\n\n\n",
+      "choices": [
+        { "label": "PLAY AGAIN", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" }
+      ]
+    },
+    "S11": {
+      "id": "S11",
+      "text": "You authorize their release.\n\nThey stand slowly. No gratitude. No relief.\n\nAt the door, they pause like they might say something.\n\nThey do not.\n\nYou never learn if mercy was earned.\n\nOnly that you chose humanity over certainty.\n\nCHOICES\n\nPLAY AGAIN\nReturn to the beginning.\n\n\n\n",
+      "choices": [
+        { "label": "PLAY AGAIN", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" }
+      ]
+    },
+    "S12": {
+      "id": "S12",
+      "text": "You escalate the case.\n\nThe room changes as soon as you do. More eyes. More distance.\n\nThey stop speaking to you and start speaking past you.\n\nYou are no longer in the room when it concludes.\n\nOnly that you handed the weight upward.\n\nCHOICES\n\nPLAY AGAIN\nReturn to the beginning.\n\n\n\n",
+      "choices": [
+        { "label": "PLAY AGAIN", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" }
+      ]
+    },
+    "S13": {
+      "id": "S13",
+      "text": "You walk away without deciding.\n\nTime chooses for you.\n\nIn the hall, you tell yourself you needed more certainty.\n\nLater, you realize certainty was never on the table.\n\nYou replay the silence longer than anything that was said.\n\nCHOICES\n\nPLAY AGAIN\nReturn to the beginning.\n\n\n\n",
+      "choices": [
+        { "label": "PLAY AGAIN", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" },
+        { "label": "", "to": "S01" }
+      ]
+    }
+  }
+}
